@@ -1,17 +1,17 @@
 {
   "format": 1,
   "restore": {
-    "C:\\Users\\neuge\\Source\\Repos\\Miskota\\D03CBX_HFT_2023241\\D03CBX_HFT_2023241.Test\\D03CBX_HFT_2023241.Test.csproj": {}
+    "C:\\Users\\neuge\\Source\\Repos\\D03CBX_HFT_2023241\\D03CBX_HFT_2023241.Test\\D03CBX_HFT_2023241.Test.csproj": {}
   },
   "projects": {
-    "C:\\Users\\neuge\\Source\\Repos\\Miskota\\D03CBX_HFT_2023241\\D03CBX_HFT_2023241.Test\\D03CBX_HFT_2023241.Test.csproj": {
+    "C:\\Users\\neuge\\Source\\Repos\\D03CBX_HFT_2023241\\D03CBX_HFT_2023241.Test\\D03CBX_HFT_2023241.Test.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\neuge\\Source\\Repos\\Miskota\\D03CBX_HFT_2023241\\D03CBX_HFT_2023241.Test\\D03CBX_HFT_2023241.Test.csproj",
+        "projectUniqueName": "C:\\Users\\neuge\\Source\\Repos\\D03CBX_HFT_2023241\\D03CBX_HFT_2023241.Test\\D03CBX_HFT_2023241.Test.csproj",
         "projectName": "D03CBX_HFT_2023241.Test",
-        "projectPath": "C:\\Users\\neuge\\Source\\Repos\\Miskota\\D03CBX_HFT_2023241\\D03CBX_HFT_2023241.Test\\D03CBX_HFT_2023241.Test.csproj",
+        "projectPath": "C:\\Users\\neuge\\Source\\Repos\\D03CBX_HFT_2023241\\D03CBX_HFT_2023241.Test\\D03CBX_HFT_2023241.Test.csproj",
         "packagesPath": "C:\\Users\\neuge\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\neuge\\Source\\Repos\\Miskota\\D03CBX_HFT_2023241\\D03CBX_HFT_2023241.Test\\obj\\",
+        "outputPath": "C:\\Users\\neuge\\Source\\Repos\\D03CBX_HFT_2023241\\D03CBX_HFT_2023241.Test\\obj\\",
         "projectStyle": "PackageReference",
         "configFilePaths": [
           "C:\\Users\\neuge\\AppData\\Roaming\\NuGet\\NuGet.Config",
