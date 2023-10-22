@@ -1,11 +1,49 @@
 {
   "version": 3,
   "targets": {
-    "net5.0": {}
+    "net5.0": {
+      "D03CBX_HFT_2023241.Models/1.0.0": {
+        "type": "project",
+        "framework": ".NETCoreApp,Version=v5.0",
+        "compile": {
+          "bin/placeholder/D03CBX_HFT_2023241.Models.dll": {}
+        },
+        "runtime": {
+          "bin/placeholder/D03CBX_HFT_2023241.Models.dll": {}
+        }
+      },
+      "D03CBX_HFT_2023241.Repository/1.0.0": {
+        "type": "project",
+        "framework": ".NETCoreApp,Version=v5.0",
+        "dependencies": {
+          "D03CBX_HFT_2023241.Models": "1.0.0"
+        },
+        "compile": {
+          "bin/placeholder/D03CBX_HFT_2023241.Repository.dll": {}
+        },
+        "runtime": {
+          "bin/placeholder/D03CBX_HFT_2023241.Repository.dll": {}
+        }
+      }
+    }
   },
-  "libraries": {},
+  "libraries": {
+    "D03CBX_HFT_2023241.Models/1.0.0": {
+      "type": "project",
+      "path": "../D03CBX_HFT_2023241.Models/D03CBX_HFT_2023241.Models.csproj",
+      "msbuildProject": "../D03CBX_HFT_2023241.Models/D03CBX_HFT_2023241.Models.csproj"
+    },
+    "D03CBX_HFT_2023241.Repository/1.0.0": {
+      "type": "project",
+      "path": "../D03CBX_HFT_2023241.Repository/D03CBX_HFT_2023241.Repository.csproj",
+      "msbuildProject": "../D03CBX_HFT_2023241.Repository/D03CBX_HFT_2023241.Repository.csproj"
+    }
+  },
   "projectFileDependencyGroups": {
-    "net5.0": []
+    "net5.0": [
+      "D03CBX_HFT_2023241.Models >= 1.0.0",
+      "D03CBX_HFT_2023241.Repository >= 1.0.0"
+    ]
   },
   "packageFolders": {
     "C:\\Users\\neuge\\.nuget\\packages\\": {}
@@ -13,11 +51,11 @@
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "C:\\Users\\neuge\\Source\\Repos\\D03CBX_HFT_2023241\\D03CBX_HFT_2023241.Logic\\D03CBX_HFT_2023241.Logic.csproj",
+      "projectUniqueName": "C:\\Users\\neuge\\source\\repos\\Miskota\\D03CBX_HFT_2023241_\\D03CBX_HFT_2023241.Logic\\D03CBX_HFT_2023241.Logic.csproj",
       "projectName": "D03CBX_HFT_2023241.Logic",
-      "projectPath": "C:\\Users\\neuge\\Source\\Repos\\D03CBX_HFT_2023241\\D03CBX_HFT_2023241.Logic\\D03CBX_HFT_2023241.Logic.csproj",
+      "projectPath": "C:\\Users\\neuge\\source\\repos\\Miskota\\D03CBX_HFT_2023241_\\D03CBX_HFT_2023241.Logic\\D03CBX_HFT_2023241.Logic.csproj",
       "packagesPath": "C:\\Users\\neuge\\.nuget\\packages\\",
-      "outputPath": "C:\\Users\\neuge\\Source\\Repos\\D03CBX_HFT_2023241\\D03CBX_HFT_2023241.Logic\\obj\\",
+      "outputPath": "C:\\Users\\neuge\\Source\\Repos\\Miskota\\D03CBX_HFT_2023241_\\D03CBX_HFT_2023241.Logic\\obj\\",
       "projectStyle": "PackageReference",
       "configFilePaths": [
         "C:\\Users\\neuge\\AppData\\Roaming\\NuGet\\NuGet.Config",
@@ -33,7 +71,14 @@
       "frameworks": {
         "net5.0": {
           "targetAlias": "net5.0",
-          "projectReferences": {}
+          "projectReferences": {
+            "C:\\Users\\neuge\\source\\repos\\Miskota\\D03CBX_HFT_2023241_\\D03CBX_HFT_2023241.Models\\D03CBX_HFT_2023241.Models.csproj": {
+              "projectPath": "C:\\Users\\neuge\\source\\repos\\Miskota\\D03CBX_HFT_2023241_\\D03CBX_HFT_2023241.Models\\D03CBX_HFT_2023241.Models.csproj"
+            },
+            "C:\\Users\\neuge\\source\\repos\\Miskota\\D03CBX_HFT_2023241_\\D03CBX_HFT_2023241.Repository\\D03CBX_HFT_2023241.Repository.csproj": {
+              "projectPath": "C:\\Users\\neuge\\source\\repos\\Miskota\\D03CBX_HFT_2023241_\\D03CBX_HFT_2023241.Repository\\D03CBX_HFT_2023241.Repository.csproj"
+            }
+          }
         }
       },
       "warningProperties": {
