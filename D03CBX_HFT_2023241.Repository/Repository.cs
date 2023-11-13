@@ -1,11 +1,10 @@
-﻿using D03CBX_HFT_2023241.Models;
-using System;
+﻿using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
 namespace D03CBX_HFT_2023241.Repository {
-    public class AlbumRepository : Repository<Album> {
+    internal class Repository {
     }
 }

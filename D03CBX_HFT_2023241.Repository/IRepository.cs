@@ -6,12 +6,12 @@ using System.Text;
 using System.Threading.Tasks;
 
 namespace D03CBX_HFT_2023241.Repository {
-    public interface IRepository {
-        void Create(Record record);
-        Record Read(int id);
-        void Update(Record record);
+    public interface IRepository<T> where T : class {
+        IQueryable<T> ReadAll();
+        T Read(int id);
+        void Create(T item);
+        void Update(T item);
         void Delete(int id);
 
-        IQueryable<Record> ReadAll();
     }
 }
