@@ -5,6 +5,20 @@
   </PropertyGroup>
 
   <ItemGroup>
+    <None Remove="Music.mdf" />
+    <None Remove="Music_log.ldf" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <Content Include="Music.mdf">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Music_log.ldf">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+  </ItemGroup>
+
+  <ItemGroup>
     <ProjectReference Include="..\D03CBX_HFT_2023241.Models\D03CBX_HFT_2023241.Models.csproj" />
   </ItemGroup>
 	<ItemGroup>

@@ -8,8 +8,9 @@ using System.Threading.Tasks;
 namespace D03CBX_HFT_2023241.Repository {
     public interface IRepository<T> where T : class {
         IQueryable<T> ReadAll();
-        T Read(int id);
+        
         void Create(T item);
+        T Read(int id);
         void Update(T item);
         void Delete(int id);
 
