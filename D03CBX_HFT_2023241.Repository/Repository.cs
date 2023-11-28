@@ -17,7 +17,7 @@ namespace D03CBX_HFT_2023241.Repository {
             ctx.SaveChanges();
         }
 
-        public IQueryable ReadAll() {
+        public IQueryable<T> ReadAll() {
             return ctx.Set<T>();
         }
 
