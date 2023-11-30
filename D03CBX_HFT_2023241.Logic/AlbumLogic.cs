@@ -42,17 +42,23 @@ namespace D03CBX_HFT_2023241.Logic {
 
 
         // Non-CRUD
+        // List albums from a given year
         public int AlbumCount() {
             return repo.ReadAll().Count();
         }
 
+        
         public List<string> ListByYear(int year) {
             var list = repo.ReadAll();
-            var filtered = list.Where(a => a.ReleaseYear == year).Select(h => h.AlbumName).ToList();
+            var filtered = list.Where(a => a.ReleaseYear == year)
+                               .Select(h => h.AlbumName)
+                               .ToList();
             if (filtered == null) {
                 throw new NullReferenceException($"There are no albums published in {year}");
             }
             return filtered;
         }
+
+        // Group by year, list albums
     }
 }

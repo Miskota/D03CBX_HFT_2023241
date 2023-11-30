@@ -47,11 +47,13 @@ namespace D03CBX_HFT_2023241.Repository {
             modelBuilder.Entity<Writer>().HasData(
                 new Writer {
                         WriterID = 1,
-                        WriterName = "John Lennon"
+                        WriterName = "John Lennon",
+                        YearOfBirth = 1940
                 },
                 new Writer {
                         WriterID = 2,
-                        WriterName = "Daft Punk"
+                        WriterName = "Daft Punk",
+                        YearOfBirth = -1 // Will throw an exception, Daft Punk has 2 members with varying dates
                 });
 
             // Sample Albums

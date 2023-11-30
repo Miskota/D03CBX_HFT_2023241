@@ -39,5 +39,50 @@ namespace D03CBX_HFT_2023241.Logic {
         public void Update(Writer item) {
             repo.Update(item);
         }
+
+        // Writer Non-CRUD
+        // Top 10 oldest Writers
+        // Get latest and oldest album
+        // Top 10 (sort by Album count)
+        // List album titles for a specific Writer
+
+        public IEnumerable<Writer> Top10Oldest() {
+            var list = repo.ReadAll();
+            var top10 = list.OrderBy(t => t.Age);
+            return top10;
+        }
+
+        public IEnumerable<Album> OldestLatestAlbums(int writerId) {
+            var writer = repo.Read(writerId);
+            if (writer == null) {
+                throw new ArgumentException($"No Writer with {writerId} was found");
+            }
+
+            var sorted = writer.Albums.OrderBy(t => t.ReleaseYear);
+            var albums = new List<Album> {
+                sorted.First(),
+                sorted.Last()
+            }.AsEnumerable();
+
+            return albums;
+        }
+
+        public IEnumerable<Album> ListAlbums(int writerId) {
+            var writer = repo.Read(writerId);
+            if (writer == null) {
+                throw new ArgumentException($"No Writer with {writerId} was found");
+            }
+
+            var albums = writer.Albums;
+            return albums;
+        }
+
+        public IEnumerable<Writer> Top10AlbumCount() {
+            var list = repo.ReadAll();
+            var top10 = list.OrderByDescending(t => t.Albums.Count)
+                            .Take(10);
+                            
+            return top10;
+        }
     }
 }

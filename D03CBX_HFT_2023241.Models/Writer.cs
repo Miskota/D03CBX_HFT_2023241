@@ -15,6 +15,10 @@ namespace D03CBX_HFT_2023241.Models {
         public Writer() {
             Albums = new List<Album>();
         }
+        public int YearOfBirth { get; set; }
+
+        [NotMapped]
+        public int Age { get { return DateTime.Now.Year - YearOfBirth; } }
 
         [StringLength(240)]
         public string WriterName { get; set; }
