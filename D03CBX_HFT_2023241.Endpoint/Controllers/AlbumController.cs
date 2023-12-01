@@ -1,4 +1,5 @@
 ﻿using D03CBX_HFT_2023241.Logic;
+using D03CBX_HFT_2023241.Models;
 using Microsoft.AspNetCore.Mvc;
 using System.Collections.Generic;
 
@@ -9,34 +10,41 @@ namespace D03CBX_HFT_2023241.Endpoint.Controllers {
     [ApiController]
     public class AlbumController : ControllerBase {
 
-        AlbumLogic logic;
+        IAlbumLogic logic;
+        public AlbumController(IAlbumLogic logic)
+        {
+            this.logic = logic;
+        }
 
 
         // GET: api/<AlbumController>
         [HttpGet]
-        public IEnumerable<string> Get() {
-            return new string[] { "value1", "value2" };
+        public IEnumerable<Album> ReadAll() {
+            return this.logic.ReadAll();
         }
 
         // GET api/<AlbumController>/5
         [HttpGet("{id}")]
-        public string Get(int id) {
-            return "value";
+        public Album Read(int id) {
+            return this.logic.Read(id);
         }
 
         // POST api/<AlbumController>
         [HttpPost]
-        public void Post([FromBody] string value) {
+        public void Create([FromBody] Album value) {
+            this.logic.Create(value);
         }
 
         // PUT api/<AlbumController>/5
-        [HttpPut("{id}")]
-        public void Put(int id, [FromBody] string value) {
+        [HttpPut]
+        public void Update([FromBody] Album value) {
+            this.logic.Update(value);
         }
 
         // DELETE api/<AlbumController>/5
         [HttpDelete("{id}")]
         public void Delete(int id) {
+            this.logic.Delete(id);
         }
     }
 }
