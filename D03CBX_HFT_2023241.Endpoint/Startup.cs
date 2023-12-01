@@ -26,6 +26,11 @@ namespace D03CBX_HFT_2023241.Endpoint {
             services.AddTransient<IRecordLogic, RecordLogic>();
             services.AddTransient<IAlbumLogic, AlbumLogic>();
             services.AddTransient<IWriterLogic, WriterLogic>();
+
+            services.AddControllers();
+            services.AddSwaggerGen(c => {
+                c.SwaggerDoc("v1", new Microsoft.OpenApi.Models.OpenApiInfo { Title = "D03CBX_HFT_2023241.Endpoint", Version = "v1" });
+            });
         }
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.

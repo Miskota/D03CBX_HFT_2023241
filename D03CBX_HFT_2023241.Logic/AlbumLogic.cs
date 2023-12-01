@@ -13,6 +13,9 @@ namespace D03CBX_HFT_2023241.Logic {
             this.repo = repo;
         }
         public void Create(Album item) {
+            if (item.AlbumName.Length < 2) {
+                throw new ArgumentException("Album name too short. At least 2 characters");
+            }
             repo.Create(item);
         }
 

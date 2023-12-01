@@ -27,10 +27,22 @@ namespace D03CBX_HFT_2023241.Models {
         public Genre Genre { get; set; }
         public int ReleaseYear { get; set; }
 
+        [NotMapped]
         public virtual Writer Writer { get; set; }
 
         [NotMapped]
         public virtual ICollection<Record> Records { get; set; }
+
+
+        public Album(string line)
+        {
+            string[] split = line.Split('#');
+            AlbumID = int.Parse(split[0]);
+            WriterID = int.Parse(split[1]);
+            AlbumName = split[2];
+            Genre = (Genre)Enum.Parse(typeof(Genre), split[3]);
+            ReleaseYear = int.Parse(split[4]);
+        }
 
     }
 }
