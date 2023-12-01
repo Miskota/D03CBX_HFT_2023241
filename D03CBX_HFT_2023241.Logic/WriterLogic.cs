@@ -7,7 +7,7 @@ using System.Text;
 using System.Threading.Tasks;
 
 namespace D03CBX_HFT_2023241.Logic {
-    public class WriterLogic {
+    public class WriterLogic : IWriterLogic {
         IRepository<Writer> repo;
 
         public WriterLogic(IRepository<Writer> repo) {
@@ -81,7 +81,7 @@ namespace D03CBX_HFT_2023241.Logic {
             var list = repo.ReadAll();
             var top10 = list.OrderByDescending(t => t.Albums.Count)
                             .Take(10);
-                            
+
             return top10;
         }
     }

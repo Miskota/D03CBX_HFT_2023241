@@ -1,4 +1,5 @@
-﻿using Microsoft.AspNetCore.Mvc;
+﻿using D03CBX_HFT_2023241.Logic;
+using Microsoft.AspNetCore.Mvc;
 using System.Collections.Generic;
 
 // For more information on enabling Web API for empty projects, visit https://go.microsoft.com/fwlink/?LinkID=397860
@@ -8,7 +9,9 @@ namespace D03CBX_HFT_2023241.Endpoint.Controllers {
     [ApiController]
     public class AlbumController : ControllerBase {
 
-        
+        AlbumLogic logic;
+
+
         // GET: api/<AlbumController>
         [HttpGet]
         public IEnumerable<string> Get() {

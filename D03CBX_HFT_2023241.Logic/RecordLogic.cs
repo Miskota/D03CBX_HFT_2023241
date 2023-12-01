@@ -7,7 +7,7 @@ using System.Text;
 using System.Threading.Tasks;
 
 namespace D03CBX_HFT_2023241.Logic {
-    public class RecordLogic {
+    public class RecordLogic : IRecordLogic {
         IRepository<Record> repo;
 
         public RecordLogic(IRepository<Record> repo) {
@@ -51,7 +51,7 @@ namespace D03CBX_HFT_2023241.Logic {
             var list = repo.ReadAll().ToList();
             var top10 = list.OrderByDescending(t => t.Plays)
                             .Take(10);
-                            
+
             return top10;
         }
 
@@ -59,7 +59,7 @@ namespace D03CBX_HFT_2023241.Logic {
             var list = repo.ReadAll().ToList();
             var top10 = list.OrderByDescending(t => t.Rating)
                             .Take(10);
-                            
+
             return top10;
         }
 
@@ -67,7 +67,7 @@ namespace D03CBX_HFT_2023241.Logic {
             Genre genre = (Genre)Enum.Parse(typeof(Genre), genreString);
             var list = repo.ReadAll()
                            .Where(t => t.Genre == genre);
-                           
+
 
             if (list == null) {
                 throw new ArgumentException($"No music with {genreString} was found");

@@ -5,12 +5,11 @@ using D03CBX_HFT_2023241.Models;
 using D03CBX_HFT_2023241.Repository;
 
 namespace D03CBX_HFT_2023241.Logic {
-    public class AlbumLogic {
+    public class AlbumLogic : IAlbumLogic {
 
         IRepository<Album> repo;
 
-        public AlbumLogic(IRepository<Album> repo)
-        {
+        public AlbumLogic(IRepository<Album> repo) {
             this.repo = repo;
         }
         public void Create(Album item) {
@@ -47,12 +46,12 @@ namespace D03CBX_HFT_2023241.Logic {
             return repo.ReadAll().Count();
         }
 
-        
-        public List<string> ListByYear(int year) {
+
+        public IEnumerable<string> ListByYear(int year) {
             var list = repo.ReadAll();
             var filtered = list.Where(a => a.ReleaseYear == year)
-                               .Select(h => h.AlbumName)
-                               .ToList();
+                               .Select(h => h.AlbumName);
+
             if (filtered == null) {
                 throw new NullReferenceException($"There are no albums published in {year}");
             }
@@ -60,5 +59,6 @@ namespace D03CBX_HFT_2023241.Logic {
         }
 
         // Group by year, list albums
+        // Avg plays / album
     }
 }
