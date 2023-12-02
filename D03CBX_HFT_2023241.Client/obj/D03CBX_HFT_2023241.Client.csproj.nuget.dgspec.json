@@ -47,6 +47,10 @@
             "ConsoleMenu-simple": {
               "target": "Package",
               "version": "[2.6.1, )"
+            },
+            "Microsoft.AspNet.WebApi.Client": {
+              "target": "Package",
+              "version": "[5.2.7, )"
             }
           },
           "imports": [

@@ -85,7 +85,16 @@ namespace D03CBX_HFT_2023241.Test {
         }
 
 
-
+        [Test]
+        public void CreateWriterTest() {
+            var writer = new Writer() {
+                WriterID = 1,
+                WriterName = "Test",
+                YearOfBirth = 1990
+            };
+            writerLogic.Create(writer);
+            mockWriterRepo.Verify(w => w.Create(writer), Times.Once);
+        }
 
         // Album Create tests
         [Test]

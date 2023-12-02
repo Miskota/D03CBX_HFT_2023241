@@ -84,5 +84,14 @@ namespace D03CBX_HFT_2023241.Logic {
 
             return top10;
         }
+
+        // 2 Tables
+        public IEnumerable<Writer> WritersWithAlbumsInGenre(string genreString) {
+            Genre genre = (Genre)Enum.Parse(typeof(Genre), genreString);
+            var read = repo.ReadAll();
+            var writers = read.Where(writer => writer.Albums.Any(album => album.Genre == genre))
+                              .ToList();
+            return writers;
+        }
     }
 }
