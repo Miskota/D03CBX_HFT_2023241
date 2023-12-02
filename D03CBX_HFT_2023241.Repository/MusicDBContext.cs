@@ -45,12 +45,12 @@ namespace D03CBX_HFT_2023241.Repository {
 
             // Sample Writers
             modelBuilder.Entity<Writer>().HasData(
-                new Writer {
+                new Writer() {
                         WriterID = 1,
                         WriterName = "John Lennon",
                         YearOfBirth = 1940
                 },
-                new Writer {
+                new Writer() {
                         WriterID = 2,
                         WriterName = "Daft Punk",
                         YearOfBirth = -1 // Will throw an exception, Daft Punk has 2 members with varying dates
@@ -58,14 +58,14 @@ namespace D03CBX_HFT_2023241.Repository {
 
             // Sample Albums
             modelBuilder.Entity<Album>().HasData(
-                new Album {
+                new Album() {
                     AlbumID = 1,
                     AlbumName = "Abbey Road",
                     Genre = Genre.Rock,
                     ReleaseYear = 1969,
                     WriterID = 1 // John Lennon foreign key
                 },
-                new Album {
+                new Album() {
                     AlbumID = 2,
                     AlbumName = "Random Access Memories",
                     Genre = Genre.Electro,
@@ -75,7 +75,7 @@ namespace D03CBX_HFT_2023241.Repository {
 
             // Sample records
             modelBuilder.Entity<Record>().HasData(
-                new Record {
+                new Record() {
                     RecordID = 1,
                     Title = "Come Together",
                     AlbumID = 1,
@@ -84,7 +84,7 @@ namespace D03CBX_HFT_2023241.Repository {
                     Duration = 180,
                     Genre = Genre.Rock
                 },
-                new Record {
+                new Record() {
                     RecordID = 2,
                     Title = "Get Lucky",
                     AlbumID = 2,

@@ -20,7 +20,8 @@ namespace D03CBX_HFT_2023241.Models {
         public string Title { get; set; }
 
 
-        [StringLength(240)]
+        
+        [NotMapped]
         public virtual Album Album { get; set; }
 
 
@@ -35,5 +36,35 @@ namespace D03CBX_HFT_2023241.Models {
 
 
         public Genre Genre { get; set; }
+
+        public Record() {
+            
+        }
+
+        public Record(string line)
+        {
+            string[] split = line.Split('#');
+            RecordID = int.Parse(split[0]);
+            AlbumID = int.Parse(split[1]);
+            Title = split[2];
+            Plays = int.Parse(split[3]);
+            Duration = int.Parse(split[4]);
+            Genre = (Genre)Enum.Parse(typeof(Genre), split[5]);
+        }
+
+        public override bool Equals(object obj) {
+            if (obj == null || GetType() != obj.GetType()) {
+                return false;
+            }
+
+            Record otherRecord = (Record)obj;
+
+            return RecordID == otherRecord.RecordID &&
+                   AlbumID == otherRecord.AlbumID &&
+                   string.Equals(Title, otherRecord.Title) &&
+                   Plays == otherRecord.Plays &&
+                   Duration == otherRecord.Duration &&
+                   Genre == otherRecord.Genre;
+        }
     }
 }

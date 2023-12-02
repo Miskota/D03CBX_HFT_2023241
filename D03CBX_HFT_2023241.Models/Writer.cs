@@ -28,5 +28,13 @@ namespace D03CBX_HFT_2023241.Models {
         [NotMapped]
         public virtual ICollection<Album> Albums { get; set; }
 
+        public Writer(string line)
+        {
+            string[] split = line.Split('#');
+            WriterID = int.Parse(split[0]);
+            YearOfBirth = int.Parse(split[1]);
+            WriterName = split[2];
+        }
+
     }
 }
