@@ -19,7 +19,11 @@ namespace D03CBX_HFT_2023241.Models {
         public int YearOfBirth { get; set; }
 
         [NotMapped]
-        public int Age { get { return DateTime.Now.Year - YearOfBirth; } }
+        public string Age { get { 
+                if (YearOfBirth == -1) {
+                    return "Undefined";
+                }
+                return (DateTime.Now.Year - YearOfBirth).ToString(); } }
 
         [StringLength(240)]
         public string WriterName { get; set; }

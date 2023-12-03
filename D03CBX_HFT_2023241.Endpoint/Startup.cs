@@ -8,6 +8,7 @@ using Microsoft.AspNetCore.Http;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Hosting;
+using Microsoft.OpenApi.Models;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -35,10 +36,11 @@ namespace D03CBX_HFT_2023241.Endpoint {
             services.AddTransient<IRecordLogic, RecordLogic>();
             services.AddTransient<IAlbumLogic, AlbumLogic>();
             services.AddTransient<IWriterLogic, WriterLogic>();
+            //services.AddSingleton if AddTransient doesn't work
 
             services.AddControllers();
             services.AddSwaggerGen(c => {
-                c.SwaggerDoc("v1", new Microsoft.OpenApi.Models.OpenApiInfo { Title = "D03CBX_HFT_2023241.Endpoint", Version = "v1" });
+                c.SwaggerDoc("v1", new OpenApiInfo { Title = "D03CBX_HFT_2023241.Endpoint", Version = "v1" });
             });
         }
 

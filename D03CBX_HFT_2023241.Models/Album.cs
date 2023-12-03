@@ -14,6 +14,7 @@ namespace D03CBX_HFT_2023241.Models {
     public class Album {
 
         [Key]
+        [DatabaseGenerated(DatabaseGeneratedOption.Identity)]
         public int AlbumID { get; set; }
 
         [ForeignKey(nameof(Writer))]
