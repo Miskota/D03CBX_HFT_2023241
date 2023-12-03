@@ -6,7 +6,7 @@ using System.Text;
 using System.Threading.Tasks;
 
 namespace D03CBX_HFT_2023241.Repository {
-    public class AlbumRepository : Repository<Album> {
+    public class AlbumRepository : Repository<Album>, IRepository<Album> {
         public AlbumRepository(MusicDBContext ctx) : base(ctx)
         {
             

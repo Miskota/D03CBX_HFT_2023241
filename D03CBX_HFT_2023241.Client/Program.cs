@@ -9,9 +9,11 @@ namespace D03CBX_HFT_2023241.Client {
 
         static RestService rest;
         static void Main(string[] args) {
-            //var ctx = new MusicDbContext();
+            
 
-            rest = new RestService("http://localhost:59244/", "music"); 
+            rest = new RestService("http://localhost:59244/", "music");
+
+
             var writerSubMenu = new ConsoleMenu(args, level: 1)
                 .Add("List", () => List("Writer"))
                 .Add("Create", () => Create("Writer"))
@@ -45,6 +47,13 @@ namespace D03CBX_HFT_2023241.Client {
         static void Create(string entity) {
             Console.WriteLine(entity + " create");
             Console.ReadLine();
+
+            if (entity == "Record") {
+                Console.WriteLine("Enter Title: ");
+                string title = Console.ReadLine();
+                rest.Post(new Record() { Title = title }, "record");
+            }
+
         }
         static void List(string entity) {
             Console.WriteLine(entity + " list");
@@ -60,6 +69,22 @@ namespace D03CBX_HFT_2023241.Client {
         static void Update(string entity) {
             Console.WriteLine(entity + " update");
             Console.ReadLine();
+
+            if (entity == "Record") {
+                Console.WriteLine("Enter RecordID: ");
+                int id = int.Parse(Console.ReadLine());
+                var record = rest.Get<Record>(id, "record");
+
+                Console.WriteLine($"Enter new Title [Old: {record.Title}]: "); 
+                record.Title = Console.ReadLine();
+
+                Console.WriteLine($"Enter new Playcount [Old: {record.Plays}]: ");
+                record.Plays = int.Parse(Console.ReadLine());
+
+                Console.WriteLine($"Enter new Rating [Old: {record.Rating}]: ");
+                record.Rating = double.Parse(Console.ReadLine());
+                rest.Put(record, "record");
+            }
         }
         static void Delete(string entity) {
             Console.WriteLine(entity + " delete");

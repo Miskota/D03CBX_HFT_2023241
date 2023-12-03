@@ -4,6 +4,7 @@ using System.ComponentModel.DataAnnotations;
 using System.ComponentModel.DataAnnotations.Schema;
 using System.Linq;
 using System.Text;
+using System.Text.Json.Serialization;
 using System.Threading.Tasks;
 
 namespace D03CBX_HFT_2023241.Models {
@@ -31,6 +32,7 @@ namespace D03CBX_HFT_2023241.Models {
         public virtual Writer Writer { get; set; }
 
         [NotMapped]
+        [JsonIgnore]
         public virtual ICollection<Record> Records { get; set; }
 
 
@@ -43,6 +45,5 @@ namespace D03CBX_HFT_2023241.Models {
             Genre = (Genre)Enum.Parse(typeof(Genre), split[3]);
             ReleaseYear = int.Parse(split[4]);
         }
-
     }
 }

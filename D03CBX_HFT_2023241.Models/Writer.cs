@@ -24,7 +24,7 @@ namespace D03CBX_HFT_2023241.Models {
         [StringLength(240)]
         public string WriterName { get; set; }
 
-        //[JsonIgnore]
+        [JsonIgnore]
         [NotMapped]
         public virtual ICollection<Album> Albums { get; set; }
 

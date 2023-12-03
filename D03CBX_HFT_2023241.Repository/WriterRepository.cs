@@ -6,7 +6,7 @@ using System.Text;
 using System.Threading.Tasks;
 
 namespace D03CBX_HFT_2023241.Repository {
-    public class WriterRepository : Repository<Writer> {
+    public class WriterRepository : Repository<Writer>, IRepository<Writer> {
 
         public WriterRepository(MusicDBContext ctx) : base(ctx)
         {
