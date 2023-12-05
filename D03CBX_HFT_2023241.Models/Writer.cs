@@ -40,5 +40,15 @@ namespace D03CBX_HFT_2023241.Models {
             WriterName = split[2];
         }
 
+        public override bool Equals(object obj) {
+            if (obj == null) {
+                return false;
+            }
+
+            Writer a = (Writer)obj;
+
+            // Matching ID is enough
+            return WriterID == a.WriterID;
+        }
     }
 }

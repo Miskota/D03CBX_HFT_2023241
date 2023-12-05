@@ -149,5 +149,48 @@ namespace D03CBX_HFT_2023241.Test {
 
             CollectionAssert.AreEqual(expected.ToList(), result.ToList());
         }
+
+        [Test]
+        public void WritersWithAlbumsInGenreTest() {
+            
+            var tempMock = new Mock<IRepository<Writer>>();
+            var tempLogic = new WriterLogic(tempMock.Object);
+
+            var sampleWriters = new List<Writer>() {
+                new Writer { WriterID = 1, 
+                     WriterName = "John Lennon",
+                     YearOfBirth = 1940, 
+                     Albums = new List<Album> { new Album { AlbumID = 1,
+                                                            AlbumName = "Abbey Road",
+                                                            Genre = Genre.Rock } 
+                     } 
+                },
+                new Writer { WriterID = 2,
+                     WriterName = "Daft Punk", 
+                     YearOfBirth = -1, 
+                     Albums = new List<Album> { new Album { AlbumID = 2,
+                                                            AlbumName = "Random Access Memories",
+                                                            Genre = Genre.Electro }
+                     }
+                }
+            };
+            tempMock.Setup(repo => repo.ReadAll()).Returns(sampleWriters.AsQueryable);
+
+            var result = tempLogic.WritersWithAlbumsInGenre("Rock");
+
+            var expected = new List<Writer>() {
+                new Writer { WriterID = 1, 
+                      WriterName = "John Lennon",
+                      YearOfBirth = 1940,
+                      Albums = new List<Album> { new Album { AlbumID = 1,
+                                                             AlbumName = "Abbey Road",
+                                                             Genre = Genre.Rock }
+                      }
+                },
+        
+            };
+
+            CollectionAssert.AreEqual(expected, result.ToList());
+        }
     }
 }
