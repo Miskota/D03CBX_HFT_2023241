@@ -15,7 +15,7 @@ namespace D03CBX_HFT_2023241.Test {
         // 10 db Unit test
         // 5 Non-CRUD
         // 3 Create
-        // 2 Szabadon választott
+        // 2 Free
 
         AlbumLogic albumLogic;
         Mock<IRepository<Album>> mockAlbumRepo;

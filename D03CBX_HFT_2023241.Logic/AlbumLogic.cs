@@ -62,6 +62,6 @@ namespace D03CBX_HFT_2023241.Logic {
         }
 
         // Group by year, list albums
-        // Avg plays / album
+        // Avg plays / album -> Requires 2 tables
     }
 }
