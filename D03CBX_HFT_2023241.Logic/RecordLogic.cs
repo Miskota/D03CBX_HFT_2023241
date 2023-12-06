@@ -40,12 +40,12 @@ namespace D03CBX_HFT_2023241.Logic {
             repo.Update(item);
         }
 
+        // Ideas
         // Record Non-CRUD
         // Most plays (Top 10?)
         // List by genre
         // Top 10 rated songs
         // Group by genre, statistics
-        // Non crud with multiple tables (5)
 
         public IEnumerable<Record> Top10Plays() {
             var list = repo.ReadAll().ToList();
@@ -75,7 +75,7 @@ namespace D03CBX_HFT_2023241.Logic {
             return list;
         }
 
-        public IEnumerable<GenreStatistics> GenreStatistics() {
+        public IEnumerable<string> GenreStatistics() {
             var list = repo.ReadAll().ToList();
             var grouped = from x in list
                           group x by x.Genre into g
@@ -85,7 +85,10 @@ namespace D03CBX_HFT_2023241.Logic {
                               AverageRating = g.Average(t => t.Rating),
                               AverageLength = g.Average(t => t.Duration)
                           };
-            return grouped;
+            var strings = grouped.Select(stat => {
+                return $"{stat.Genre}: Average plays: {stat.AveragePlay} | Average rating: {Math.Round(stat.AverageRating, 2)} | Average length: {stat.AverageLength}";
+            });
+            return strings;
         }
     }
 }

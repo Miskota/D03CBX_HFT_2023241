@@ -11,5 +11,6 @@ namespace D03CBX_HFT_2023241.Logic {
         Album Read(int id);
         IQueryable<Album> ReadAll();
         void Update(Album item);
+        IEnumerable<string> AveragePlaysAlbum();
     }
 }

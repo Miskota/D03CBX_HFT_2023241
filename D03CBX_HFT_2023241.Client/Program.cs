@@ -36,10 +36,15 @@ namespace D03CBX_HFT_2023241.Client {
                 .Add("Update", () => Update("Record"))
                 .Add("Exit", ConsoleMenu.Close);
 
+            var nonCrudSubMenu = new ConsoleMenu(args, level: 1)
+                //.Add("", ())
+                ;
+
             var menu = new ConsoleMenu(args, level: 0)
                 .Add("Writers", () => writerSubMenu.Show())
                 .Add("Albums", () => albumSubMenu.Show())
                 .Add("Records", () => recordSubMenu.Show())
+                //.Add("Statistics (NonCrud)", ())
                 .Add("Exit", ConsoleMenu.Close);
 
             menu.Show();

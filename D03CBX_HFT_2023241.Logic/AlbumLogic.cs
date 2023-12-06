@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.ComponentModel.DataAnnotations;
 using System.Linq;
 using D03CBX_HFT_2023241.Models;
 using D03CBX_HFT_2023241.Repository;
@@ -61,7 +62,16 @@ namespace D03CBX_HFT_2023241.Logic {
             return filtered;
         }
 
-        // Group by year, list albums
-        // Avg plays / album -> Requires 2 tables
+        public IEnumerable<string> AveragePlaysAlbum() {
+            var albums = repo.ReadAll();
+            var result = albums.GroupBy(album => album.AlbumName)
+                               .Select(group => new {
+                                   AlbumName = group.Key,
+                                   AveragePlays = group.SelectMany(album => album.Records)
+                                                       .Average(record => record.Plays)
+                               })
+                               .Select(album => $"{album.AlbumName}: Average plays: {album.AveragePlays}");
+            return result;
+        }
     }
 }

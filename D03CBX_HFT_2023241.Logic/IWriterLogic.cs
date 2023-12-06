@@ -13,5 +13,6 @@ namespace D03CBX_HFT_2023241.Logic {
         IEnumerable<Writer> Top10AlbumCount();
         IEnumerable<Writer> Top10Oldest();
         void Update(Writer item);
+        IEnumerable<Writer> WritersWithAblumsInGenre(string genreString);
     }
 }

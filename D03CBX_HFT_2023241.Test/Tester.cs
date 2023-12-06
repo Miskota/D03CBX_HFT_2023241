@@ -12,7 +12,7 @@ namespace D03CBX_HFT_2023241.Test {
     [TestFixture]
     public class Tester {
         // Mock repository
-        // 10 db Unit test
+        // 10 Unit tests
         // 5 Non-CRUD
         // 3 Create
         // 2 Free
@@ -189,6 +189,109 @@ namespace D03CBX_HFT_2023241.Test {
                 },
         
             };
+
+            CollectionAssert.AreEqual(expected, result.ToList());
+        }
+
+
+        [Test]
+        public void ListByGenreTest() {
+            var result = recordLogic.ListByGenre("Rock");
+            var expected = new List<Record>() { new Record("1#1#Song1#100#240#Rock") }.AsEnumerable();
+
+            Assert.That(expected, Is.EqualTo(result));
+        }
+
+        [Test]
+        public void ListByGenreInvalidGenreTest() {
+            
+            Assert.Throws<ArgumentException>(() => recordLogic.ListByGenre("Error"));
+        }
+
+
+
+
+        [Test]
+        public void AveragePlayPerAlbumTest() {
+            var tempMock = new Mock<IRepository<Album>>();
+            var logic = new AlbumLogic(tempMock.Object);
+            var sampleWriters = new List<Album> {
+                    new Album { AlbumID = 1,
+                                AlbumName = "Abbey Road",
+                                Genre = Genre.Rock,
+                                Records = new List<Record> { new Record() { RecordID = 1,
+                                                                          Plays = 100 },
+                                                             new Record() { RecordID = 2,
+                                                                           Plays = 200 }
+                                }
+                    },
+                    new Album { AlbumID = 2,
+                                AlbumName = "Let It Be",
+                                Genre = Genre.Rock,
+                                Records = new List<Record> { new Record() { RecordID = 3,
+                                                                            Plays = 150 },
+                                                             new Record() { RecordID = 4,
+                                                                            Plays = 300 }
+                                }
+                    },
+                    new Album { AlbumID = 3,
+                                AlbumName = "Band on the Run",
+                                Genre = Genre.Rock,
+                                Records = new List<Record> { new Record() { RecordID = 5,
+                                                                          Plays = 200 },
+                                                             new Record() { RecordID = 6,
+                                                                          Plays = 400 }
+                                }
+                    }
+            };
+            tempMock.Setup(repo => repo.ReadAll()).Returns(sampleWriters.AsQueryable());
+
+            var result = logic.AveragePlaysAlbum();
+
+            CollectionAssert.AreEqual(new List<string>() {
+                $"Abbey Road: Average plays: {300 / 2}",
+                $"Let It Be: Average plays: {450 / 2}",
+                $"Band on the Run: Average plays: {600 / 2}"
+            }, result.ToList());
+
+            // $"{album.AlbumName}: Average plays: {album.AveragePlays}"
+        }
+
+        [Test]
+        public void GenreStatisticsTest() {
+            var tempMock = new Mock<IRepository<Record>>();
+            var logic = new RecordLogic(tempMock.Object);
+            var sample = new List<Record>() {
+                new Record() { RecordID = 1, 
+                               Title = "Song1",
+                               Genre = Genre.Rock, 
+                               Plays = 100,
+                               Rating = 4.5,
+                               Duration = 180 },
+                new Record() { RecordID = 2,
+                               Title = "Song2",
+                               Genre = Genre.Pop, 
+                               Plays = 150,
+                               Rating = 4.0,
+                               Duration = 200 },
+                new Record() { RecordID = 3,
+                               Title = "Song3", 
+                               Genre = Genre.Rock, 
+                               Plays = 120, 
+                               Rating = 4.2, 
+                               Duration = 190 }
+            };
+            tempMock.Setup(repo => repo.ReadAll()).Returns(sample.AsQueryable());
+            var expected = new List<string>
+            {
+                // Test might depend on decimal symbol ('.' or ',')
+                "Rock: Average plays: 110 | Average rating: 4,35 | Average length: 185",
+                "Pop: Average plays: 150 | Average rating: 4 | Average length: 200"
+        
+            };
+            // $"{stat.Genre}: Average plays: {stat.AveragePlay} | Average rating: {stat.AverageRating} | Average length: {stat.AverageLength}";
+
+            var result = logic.GenreStatistics();
 
             CollectionAssert.AreEqual(expected, result.ToList());
         }

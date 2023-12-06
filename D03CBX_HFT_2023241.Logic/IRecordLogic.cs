@@ -6,7 +6,7 @@ namespace D03CBX_HFT_2023241.Logic {
     public interface IRecordLogic {
         void Create(Record item);
         void Delete(int id);
-        IEnumerable<GenreStatistics> GenreStatistics();
+        IEnumerable<string> GenreStatistics();
         IEnumerable<Record> ListByGenre(string genreString);
         Record Read(int id);
         IQueryable<Record> ReadAll();
