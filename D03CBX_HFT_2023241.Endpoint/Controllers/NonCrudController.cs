@@ -22,17 +22,17 @@ namespace D03CBX_HFT_2023241.Endpoint.Controllers {
         }
 
         // Writer
-        [HttpGet]
+        [HttpGet("{genre}")]
         public IEnumerable<Writer> WritersWithAlbumsInGenre(string genre) {
             return writerLogic.WritersWithAlbumsInGenre(genre);
         }
 
-        [HttpGet]
+        [HttpGet("{writerId}")]
         public IEnumerable<Album> OldestLatestAlbums(int writerId) {
             return writerLogic.OldestLatestAlbums(writerId);
         }
 
-        [HttpGet]
+        [HttpGet("{writerId}")]
         public IEnumerable<Album> ListAlbums(int writerId) {
             return writerLogic.ListAlbums(writerId);
         }
@@ -45,7 +45,7 @@ namespace D03CBX_HFT_2023241.Endpoint.Controllers {
 
 
         // Album
-        [HttpGet]
+        [HttpGet("{year}")]
         public IEnumerable<string> ListByYear(int year) {
             return albumLogic.ListByYear(year);
         }
@@ -63,7 +63,7 @@ namespace D03CBX_HFT_2023241.Endpoint.Controllers {
             return recordLogic.GenreStatistics();
         }
 
-        [HttpGet]
+        [HttpGet("{genre}")]
         public IEnumerable<Record> ListByGenre(string genre) {
             return recordLogic.ListByGenre(genre);
         }

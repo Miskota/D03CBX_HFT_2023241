@@ -37,8 +37,17 @@ namespace D03CBX_HFT_2023241.Client {
                 .Add("Exit", ConsoleMenu.Close);
 
             var nonCrudSubMenu = new ConsoleMenu(args, level: 1)
-                //.Add("", ())
-                ;
+                .Add("Writers with albums in a genre", () => WritersWithAlbumsInGenre())
+                .Add("First and latest albums from a given writer", () => OldestLatestAlbums())
+                .Add("List a given writer's albums", () => ListAlbums())
+                .Add("Top 10 writers with the most albums", () => Top10AlbumCount())
+                .Add("List every album from a given year", () => ListByYear())
+                .Add("Average plays for each album", () => AveragePlaysAlbum())
+                .Add("Statistics for each genre", () => GenreStatistics())
+                .Add("List every record in a genre", () => ListByGenre())
+                .Add("Most played records (Top 10)", () => Top10Plays())
+                .Add("Records with the best ratings (Top 10)", () => Top10Rated())
+                .Add("Exit", ConsoleMenu.Close);
 
             var menu = new ConsoleMenu(args, level: 0)
                 .Add("Writers", () => writerSubMenu.Show())
@@ -48,6 +57,39 @@ namespace D03CBX_HFT_2023241.Client {
                 .Add("Exit", ConsoleMenu.Close);
 
             menu.Show();
+        }
+        // NonCrud methods
+        static void WritersWithAlbumsInGenre() {
+
+        }
+        static void OldestLatestAlbums() {
+
+        }
+        static void ListAlbums() {
+
+        }
+        static void Top10AlbumCount() {
+
+        }
+
+        static void ListByYear() {
+
+        }
+        static void AveragePlaysAlbum() {
+
+        }
+
+        static void GenreStatistics() {
+
+        }
+        static void ListByGenre() {
+
+        }
+        static void Top10Plays() {
+
+        }
+        static void Top10Rated() {
+
         }
 
         static void Create(string entity) {
