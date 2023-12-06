@@ -11,8 +11,7 @@ namespace D03CBX_HFT_2023241.Logic {
         Writer Read(int id);
         IQueryable<Writer> ReadAll();
         IEnumerable<Writer> Top10AlbumCount();
-        IEnumerable<Writer> Top10Oldest();
         void Update(Writer item);
-        IEnumerable<Writer> WritersWithAblumsInGenre(string genreString);
+        IEnumerable<Writer> WritersWithAlbumsInGenre(string genreString);
     }
 }

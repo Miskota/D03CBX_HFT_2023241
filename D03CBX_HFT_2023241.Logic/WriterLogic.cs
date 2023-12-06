@@ -46,11 +46,11 @@ namespace D03CBX_HFT_2023241.Logic {
         // Top 10 (sort by Album count)
         // List album titles from a specific Writer
 
-        public IEnumerable<Writer> Top10Oldest() {
-            var list = repo.ReadAll();
-            var top10 = list.OrderBy(t => t.Age);
-            return top10;
-        }
+        //public IEnumerable<Writer> Top10Oldest() {
+        //    var list = repo.ReadAll();
+        //    var top10 = list.OrderBy(t => t.Age);
+        //    return top10;
+        //}
 
         // Uses 2 tables
         public IEnumerable<Album> OldestLatestAlbums(int writerId) {
@@ -95,6 +95,5 @@ namespace D03CBX_HFT_2023241.Logic {
                               .ToList();
             return writers;
         }
-        
     }
 }

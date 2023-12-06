@@ -1,4 +1,5 @@
 ﻿using D03CBX_HFT_2023241.Logic;
+using D03CBX_HFT_2023241.Models;
 using Microsoft.AspNetCore.Mvc;
 using System.Collections.Generic;
 
@@ -20,7 +21,62 @@ namespace D03CBX_HFT_2023241.Endpoint.Controllers {
             this.recordLogic = recordLogic;
         }
 
+        // Writer
+        [HttpGet]
+        public IEnumerable<Writer> WritersWithAlbumsInGenre(string genre) {
+            return writerLogic.WritersWithAlbumsInGenre(genre);
+        }
 
+        [HttpGet]
+        public IEnumerable<Album> OldestLatestAlbums(int writerId) {
+            return writerLogic.OldestLatestAlbums(writerId);
+        }
+
+        [HttpGet]
+        public IEnumerable<Album> ListAlbums(int writerId) {
+            return writerLogic.ListAlbums(writerId);
+        }
+
+        [HttpGet]
+        public IEnumerable<Writer> Top10AlbumCount() {
+            return writerLogic.Top10AlbumCount();
+        }
+
+
+
+        // Album
+        [HttpGet]
+        public IEnumerable<string> ListByYear(int year) {
+            return albumLogic.ListByYear(year);
+        }
+
+        [HttpGet]
+        public IEnumerable<string> AveragePlaysAlbum() {
+            return albumLogic.AveragePlaysAlbum();
+        }
+
+
+
+        // Record
+        [HttpGet]
+        public IEnumerable<string> GenreStatistics() {
+            return recordLogic.GenreStatistics();
+        }
+
+        [HttpGet]
+        public IEnumerable<Record> ListByGenre(string genre) {
+            return recordLogic.ListByGenre(genre);
+        }
+
+        [HttpGet]
+        public IEnumerable<Record> Top10Plays() {
+            return recordLogic.Top10Plays();
+        }
+
+        [HttpGet]
+        public IEnumerable<Record> Top10Rated() {
+            return recordLogic.Top10Rated();
+        }
 
 
         //// GET: api/<NonCrudController>

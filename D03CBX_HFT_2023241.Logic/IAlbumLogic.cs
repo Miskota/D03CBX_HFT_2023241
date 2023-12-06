@@ -4,7 +4,7 @@ using System.Linq;
 
 namespace D03CBX_HFT_2023241.Logic {
     public interface IAlbumLogic {
-        int AlbumCount();
+        //int AlbumCount();
         void Create(Album item);
         void Delete(int id);
         IEnumerable<string> ListByYear(int year);

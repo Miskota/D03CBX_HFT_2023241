@@ -46,9 +46,9 @@ namespace D03CBX_HFT_2023241.Logic {
 
         // Non-CRUD
         // List albums from a given year
-        public int AlbumCount() {
-            return repo.ReadAll().Count();
-        }
+        //public int AlbumCount() {
+        //    return repo.ReadAll().Count();
+        //}
 
 
         public IEnumerable<string> ListByYear(int year) {
