@@ -15,7 +15,8 @@ namespace D03CBX_HFT_2023241.Repository {
         protected override void OnConfiguring(DbContextOptionsBuilder optionsBuilder) {
             if (!optionsBuilder.IsConfigured) {
                 string conn = @"Data Source=(LocalDB)\MSSQLLocalDB;AttachDbFilename=|DataDirectory|\Music.mdf;Integrated Security=True;MultipleActiveResultSets=true";
-                optionsBuilder.UseLazyLoadingProxies().UseSqlServer(conn);
+                //optionsBuilder.UseLazyLoadingProxies().UseSqlServer(conn);
+                optionsBuilder.UseLazyLoadingProxies().UseInMemoryDatabase("db");
             }
         }
         protected override void OnModelCreating(ModelBuilder modelBuilder) {
