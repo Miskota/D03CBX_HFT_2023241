@@ -14,6 +14,12 @@ namespace D03CBX_HFT_2023241.Logic {
             this.repo = repo;
         }
         public void Create(Record item) {
+            if (item == null) {
+                throw new ArgumentNullException();
+            }
+            if (item.Title == "") {
+                throw new ArgumentException();
+            }
             repo.Create(item);
         }
 
@@ -37,6 +43,12 @@ namespace D03CBX_HFT_2023241.Logic {
         }
 
         public void Update(Record item) {
+            if (item == null) {
+                throw new ArgumentNullException();
+            }
+            if (item.Title == "") {
+                throw new ArgumentException();
+            }
             repo.Update(item);
         }
 
@@ -51,7 +63,6 @@ namespace D03CBX_HFT_2023241.Logic {
             var list = repo.ReadAll().ToList();
             var top10 = list.OrderByDescending(t => t.Plays)
                             .Take(10);
-
             return top10;
         }
 
@@ -59,7 +70,6 @@ namespace D03CBX_HFT_2023241.Logic {
             var list = repo.ReadAll().ToList();
             var top10 = list.OrderByDescending(t => t.Rating)
                             .Take(10);
-
             return top10;
         }
 

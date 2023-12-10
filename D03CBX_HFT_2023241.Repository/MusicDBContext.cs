@@ -48,7 +48,7 @@ namespace D03CBX_HFT_2023241.Repository {
                 new Writer() {
                     WriterID = 2,
                     WriterName = "Daft Punk",
-                    YearOfBirth = -1 // Will throw an exception, Daft Punk has 2 members with varying dates
+                    YearOfBirth = -1 // Daft Punk has 2 members with varying dates
                 },
                 new Writer() {
                     WriterID = 3,

@@ -14,6 +14,12 @@ namespace D03CBX_HFT_2023241.Logic {
             this.repo = repo;
         }
         public void Create(Writer item) {
+            if (item == null) {
+                throw new ArgumentNullException();
+            }
+            if (item.WriterName == "") {
+                throw new ArgumentException();
+            }
             repo.Create(item);
         }
 
@@ -37,6 +43,12 @@ namespace D03CBX_HFT_2023241.Logic {
         }
 
         public void Update(Writer item) {
+            if (item == null) {
+                throw new ArgumentNullException();
+            }
+            if (item.WriterName == "") {
+                throw new ArgumentException();
+            }
             repo.Update(item);
         }
 
@@ -81,7 +93,10 @@ namespace D03CBX_HFT_2023241.Logic {
 
         public IEnumerable<Writer> Top10AlbumCount() {
             var list = repo.ReadAll();
-            var top10 = list.OrderByDescending(t => t.Albums.Count)
+            if (list == null) {
+                throw new NullReferenceException();
+            }
+            var top10 = list.OrderByDescending(t => t.Albums.Count())
                             .Take(10);
 
             return top10;
@@ -91,6 +106,9 @@ namespace D03CBX_HFT_2023241.Logic {
         public IEnumerable<Writer> WritersWithAlbumsInGenre(string genreString) {
             Genre genre = (Genre)Enum.Parse(typeof(Genre), genreString);
             var read = repo.ReadAll();
+            if (read == null) {
+                throw new NullReferenceException();
+            }
             var writers = read.Where(writer => writer.Albums.Any(album => album.Genre == genre))
                               .ToList();
             return writers;

@@ -40,6 +40,9 @@ namespace D03CBX_HFT_2023241.Logic {
         }
 
         public void Update(Album item) {
+            if (item.AlbumName == "") {
+                throw new ArgumentException();
+            }
             repo.Update(item);
         }
 
@@ -64,11 +67,10 @@ namespace D03CBX_HFT_2023241.Logic {
 
         public IEnumerable<string> AveragePlaysAlbum() {
             var albums = repo.ReadAll();
-            var result = albums.GroupBy(album => album.AlbumName)
+            var result = albums.AsEnumerable().GroupBy(album => album.AlbumName)
                                .Select(group => new {
                                    AlbumName = group.Key,
-                                   AveragePlays = group.SelectMany(album => album.Records)
-                                                       .Average(record => record.Plays)
+                                   AveragePlays = group.Average(album => album.Records.Sum(record => record.Plays))
                                })
                                .Select(album => $"{album.AlbumName}: Average plays: {album.AveragePlays}");
             return result;

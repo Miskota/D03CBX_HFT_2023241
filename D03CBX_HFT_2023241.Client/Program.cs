@@ -1,5 +1,8 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Linq;
+using System.Net.Cache;
+using System.Threading;
 using ConsoleTools;
 using D03CBX_HFT_2023241.Models;
 //using D03CBX_HFT_2023241.Repository;
@@ -53,43 +56,160 @@ namespace D03CBX_HFT_2023241.Client {
                 .Add("Writers", () => writerSubMenu.Show())
                 .Add("Albums", () => albumSubMenu.Show())
                 .Add("Records", () => recordSubMenu.Show())
-                //.Add("Statistics (NonCrud)", ())
+                .Add("Statistics", () => nonCrudSubMenu.Show())
                 .Add("Exit", ConsoleMenu.Close);
 
             menu.Show();
         }
         // NonCrud methods
         static void WritersWithAlbumsInGenre() {
-
+            
+            Console.WriteLine("Enter the Genre ");
+            Console.WriteLine("Choices: Classic/Jazz/Country/Pop/Rock/Metal/Electro/Punk/Folk/Disco/Funk/Synth/HipHop  ");
+            string genre = Console.ReadLine();
+            try {
+                var val = rest.Get<Writer>($"/NonCrud/WritersWithAlbumsInGenre/{genre}");
+                Console.WriteLine($"The following writers have at least one album with the chosen genre");
+                if (val == null) {
+                    Console.WriteLine("None found");
+                } 
+                else {
+                    foreach (var item in val) {
+                        Console.WriteLine($"==============================\n" +
+                                          $"\tName: {item.WriterName}\n" +
+                                          $"\tID: {item.WriterID}\n" +
+                                          $"\tAge: {item.Age}\n"
+                                          );
+                    }
+                }
+            }
+            catch (ArgumentException) {
+                Console.WriteLine($"Invalid Genre: {genre}");
+            }
+            Console.WriteLine("\nPress any button to return");
+            Console.ReadKey();
         }
         static void OldestLatestAlbums() {
-
+            Console.WriteLine($"Enter WriterID: ");
+            try {
+                int id = int.Parse(Console.ReadLine());
+                var albums = rest.Get<Album>($"/NonCrud/OldestLatestAlbums/{id}");
+                Album first = (Album)albums.First();
+                Album latest = (Album)albums.Last();
+                Console.WriteLine($"Writer: {first.Writer.WriterName}\n" +
+                                  $"First album: {first.AlbumName} | {first.ReleaseYear}\n" +
+                                  $"Latest album: {latest.AlbumName} | {latest.ReleaseYear}\n");
+            }
+            catch (FormatException) {
+                Console.WriteLine("Invalid ID format");
+            }
+            catch (NullReferenceException) {
+                Console.WriteLine("No data found");
+            }
+            Console.WriteLine("\nPress any button to return");
+            Console.ReadKey();
         }
         static void ListAlbums() {
-
+            Console.WriteLine("Enter WriterID: ");
+            try {
+                int id = int.Parse(Console.ReadLine());
+                var albums = rest.Get<Album>($"/NonCrud/ListAlbums/{id}");
+                var writerName = albums.First().Writer.WriterName;
+                Console.WriteLine($"Albums from {writerName}");
+                foreach (var item in albums) {
+                    Console.WriteLine($"========================\n" +
+                                      $"\tAlbumID: {item.AlbumID}\n" +
+                                      $"\tName: {item.AlbumName}\n" +
+                                      $"\tGenre: {item.Genre}\n" +
+                                      $"\tReleased in {item.ReleaseYear}");
+                }
+            } 
+            catch (FormatException) {
+                Console.WriteLine("Invalid ID format");
+            }
+            catch (NullReferenceException) {
+                Console.WriteLine("No data found");
+            }
+            Console.WriteLine("\nPress any button to return");
+            Console.ReadKey();
         }
         static void Top10AlbumCount() {
-
+            Console.WriteLine("");
+            var list = rest.Get<Writer>($"/NonCrud/Top10AlbumCount");
+            int i = 1;
+            foreach (var writer in list) {
+                Console.WriteLine($"{i}: {writer.WriterName} : {writer.Albums.Count()}");
+                i++;
+            }
+            Console.WriteLine("\nPress any button to return");
+            Console.ReadKey();
         }
 
         static void ListByYear() {
-
+            Console.WriteLine("Enter the year");
+            try {
+                int year = int.Parse(Console.ReadLine());
+                var albums = rest.Get<string>($"/NonCrud/ListByYear/{year}");
+                Console.WriteLine($"Albums from {year}: ");
+                foreach (var album in albums) {
+                    Console.WriteLine(album);
+                }
+            }
+            catch (FormatException) {
+                Console.WriteLine("Invalid ID format");
+            }
+            Console.WriteLine("\nPress any button to return");
+            Console.ReadKey();
         }
         static void AveragePlaysAlbum() {
-
+            var stats = rest.Get<string>($"/NonCrud/AveragePlaysAlbum");
+            foreach (var item in stats) {
+                Console.WriteLine(item);
+            }
+            Console.WriteLine("\nPress any button to return");
+            Console.ReadKey();
         }
 
         static void GenreStatistics() {
-
+            var list = rest.Get<string>("/NonCrud/GenreStatistics");
+            foreach (var item in list) {
+                Console.WriteLine(item);
+            }
+            Console.WriteLine("\nPress any button to return");
+            Console.ReadKey();
         }
+
         static void ListByGenre() {
-
+            string genre = Console.ReadLine();
+            var list = rest.Get<Record>($"/NonCrud/ListByGenre/{genre}");
+            foreach (var item in list) {
+                Console.WriteLine($"{item.RecordID} | {item.Title}");
+            }
+            Console.WriteLine("\nPress any button to return");
+            Console.ReadKey();
         }
+
         static void Top10Plays() {
-
+            var list = rest.Get<Record>("/NonCrud/Top10Plays");
+            int i = 1;
+            Console.WriteLine("Most played songs");
+            foreach (var item in list) {
+                Console.WriteLine($"{i}: {item.Title} | {item.Plays}");
+                i++;
+            }
+            Console.WriteLine("\nPress any button to return");
+            Console.ReadKey();
         }
-        static void Top10Rated() {
 
+        static void Top10Rated() {
+            var list = rest.Get<Record>("/NonCrud/Top10Rated");
+            int i = 1;
+            Console.WriteLine("Most rated songs");
+            foreach (var item in list) {
+                Console.WriteLine($"{i}: {item.Title} | {item.Rating}");
+            }
+            Console.WriteLine("\nPress any button to return");
+            Console.ReadKey();
         }
 
         static void Create(string entity) {
@@ -165,8 +285,6 @@ namespace D03CBX_HFT_2023241.Client {
                 };
                 rest.Post(obj, "writer");
             }
-            
-
         }
 
 
