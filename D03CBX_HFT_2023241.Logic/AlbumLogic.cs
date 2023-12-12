@@ -70,7 +70,8 @@ namespace D03CBX_HFT_2023241.Logic {
             var result = albums.AsEnumerable().GroupBy(album => album.AlbumName)
                                .Select(group => new {
                                    AlbumName = group.Key,
-                                   AveragePlays = group.Average(album => album.Records.Sum(record => record.Plays))
+                                   AveragePlays = group.SelectMany(album => album.Records)
+                                                       .Average(record => record.Plays)
                                })
                                .Select(album => $"{album.AlbumName}: Average plays: {album.AveragePlays}");
             return result;

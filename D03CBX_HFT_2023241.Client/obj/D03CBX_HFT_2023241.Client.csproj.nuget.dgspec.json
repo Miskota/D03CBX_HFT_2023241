@@ -1,15 +1,15 @@
 {
   "format": 1,
   "restore": {
-    "C:\\Users\\neuge\\Source\\Repos\\Miskota\\D03CBX_HFT_2023241\\D03CBX_HFT_2023241.Client\\D03CBX_HFT_2023241.Client.csproj": {}
+    "C:\\Users\\neuge\\source\\repos\\Miskota\\D03CBX_HFT_2023241\\D03CBX_HFT_2023241.Client\\D03CBX_HFT_2023241.Client.csproj": {}
   },
   "projects": {
-    "C:\\Users\\neuge\\Source\\Repos\\Miskota\\D03CBX_HFT_2023241\\D03CBX_HFT_2023241.Client\\D03CBX_HFT_2023241.Client.csproj": {
+    "C:\\Users\\neuge\\source\\repos\\Miskota\\D03CBX_HFT_2023241\\D03CBX_HFT_2023241.Client\\D03CBX_HFT_2023241.Client.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\neuge\\Source\\Repos\\Miskota\\D03CBX_HFT_2023241\\D03CBX_HFT_2023241.Client\\D03CBX_HFT_2023241.Client.csproj",
+        "projectUniqueName": "C:\\Users\\neuge\\source\\repos\\Miskota\\D03CBX_HFT_2023241\\D03CBX_HFT_2023241.Client\\D03CBX_HFT_2023241.Client.csproj",
         "projectName": "D03CBX_HFT_2023241.Client",
-        "projectPath": "C:\\Users\\neuge\\Source\\Repos\\Miskota\\D03CBX_HFT_2023241\\D03CBX_HFT_2023241.Client\\D03CBX_HFT_2023241.Client.csproj",
+        "projectPath": "C:\\Users\\neuge\\source\\repos\\Miskota\\D03CBX_HFT_2023241\\D03CBX_HFT_2023241.Client\\D03CBX_HFT_2023241.Client.csproj",
         "packagesPath": "C:\\Users\\neuge\\.nuget\\packages\\",
         "outputPath": "C:\\Users\\neuge\\Source\\Repos\\Miskota\\D03CBX_HFT_2023241\\D03CBX_HFT_2023241.Client\\obj\\",
         "projectStyle": "PackageReference",
@@ -28,8 +28,8 @@
           "net5.0": {
             "targetAlias": "net5.0",
             "projectReferences": {
-              "C:\\Users\\neuge\\Source\\Repos\\Miskota\\D03CBX_HFT_2023241\\D03CBX_HFT_2023241.Models\\D03CBX_HFT_2023241.Models.csproj": {
-                "projectPath": "C:\\Users\\neuge\\Source\\Repos\\Miskota\\D03CBX_HFT_2023241\\D03CBX_HFT_2023241.Models\\D03CBX_HFT_2023241.Models.csproj"
+              "C:\\Users\\neuge\\source\\repos\\Miskota\\D03CBX_HFT_2023241\\D03CBX_HFT_2023241.Models\\D03CBX_HFT_2023241.Models.csproj": {
+                "projectPath": "C:\\Users\\neuge\\source\\repos\\Miskota\\D03CBX_HFT_2023241\\D03CBX_HFT_2023241.Models\\D03CBX_HFT_2023241.Models.csproj"
               }
             }
           }
@@ -73,12 +73,12 @@
         }
       }
     },
-    "C:\\Users\\neuge\\Source\\Repos\\Miskota\\D03CBX_HFT_2023241\\D03CBX_HFT_2023241.Models\\D03CBX_HFT_2023241.Models.csproj": {
+    "C:\\Users\\neuge\\source\\repos\\Miskota\\D03CBX_HFT_2023241\\D03CBX_HFT_2023241.Models\\D03CBX_HFT_2023241.Models.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\neuge\\Source\\Repos\\Miskota\\D03CBX_HFT_2023241\\D03CBX_HFT_2023241.Models\\D03CBX_HFT_2023241.Models.csproj",
+        "projectUniqueName": "C:\\Users\\neuge\\source\\repos\\Miskota\\D03CBX_HFT_2023241\\D03CBX_HFT_2023241.Models\\D03CBX_HFT_2023241.Models.csproj",
         "projectName": "D03CBX_HFT_2023241.Models",
-        "projectPath": "C:\\Users\\neuge\\Source\\Repos\\Miskota\\D03CBX_HFT_2023241\\D03CBX_HFT_2023241.Models\\D03CBX_HFT_2023241.Models.csproj",
+        "projectPath": "C:\\Users\\neuge\\source\\repos\\Miskota\\D03CBX_HFT_2023241\\D03CBX_HFT_2023241.Models\\D03CBX_HFT_2023241.Models.csproj",
         "packagesPath": "C:\\Users\\neuge\\.nuget\\packages\\",
         "outputPath": "C:\\Users\\neuge\\Source\\Repos\\Miskota\\D03CBX_HFT_2023241\\D03CBX_HFT_2023241.Models\\obj\\",
         "projectStyle": "PackageReference",
