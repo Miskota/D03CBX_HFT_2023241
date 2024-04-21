@@ -1,8 +1,8 @@
 {
   "version": 2,
-  "dgSpecHash": "fFJenJ9dzxkPAQXVpLnzdJkyrctrArw52Xsgw80TAEs3NsDdToQV3Ky+Jb1+s8XUzW7g7WI0U3ygrLMM3+rrtg==",
+  "dgSpecHash": "+wshmdNMDRczPCGw2FQ2m3cNkXbezcWXis4GeB3UhxDRbSW/K6tZb6K88G3ED7Dl8e2N9EkVnpSzV9rKjRUImw==",
   "success": true,
-  "projectFilePath": "C:\\Users\\neuge\\source\\repos\\Miskota\\D03CBX_HFT_2023241\\D03CBX_HFT_2023241.Endpoint\\D03CBX_HFT_2023241.Endpoint.csproj",
+  "projectFilePath": "C:\\Users\\neuge\\Source\\Repos\\Miskota\\D03CBX_HFT_2023241\\D03CBX_HFT_2023241.Endpoint\\D03CBX_HFT_2023241.Endpoint.csproj",
   "expectedPackageFiles": [
     "C:\\Users\\neuge\\.nuget\\packages\\castle.core\\4.4.1\\castle.core.4.4.1.nupkg.sha512",
     "C:\\Users\\neuge\\.nuget\\packages\\microsoft.csharp\\4.5.0\\microsoft.csharp.4.5.0.nupkg.sha512",
@@ -139,5 +139,16 @@
     "C:\\Users\\neuge\\.nuget\\packages\\system.xml.xmldocument\\4.3.0\\system.xml.xmldocument.4.3.0.nupkg.sha512",
     "C:\\Users\\neuge\\.nuget\\packages\\system.xml.xmlserializer\\4.3.0\\system.xml.xmlserializer.4.3.0.nupkg.sha512"
   ],
-  "logs": []
+  "logs": [
+    {
+      "code": "NU1902",
+      "level": "Warning",
+      "warningLevel": 1,
+      "message": "Package 'Swashbuckle.AspNetCore.SwaggerUI' 5.6.3 has a known moderate severity vulnerability, https://github.com/advisories/GHSA-qrmm-w75w-3wpx",
+      "libraryId": "Swashbuckle.AspNetCore.SwaggerUI",
+      "targetGraphs": [
+        "net5.0"
+      ]
+    }
+  ]
 }

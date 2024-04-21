@@ -1,20 +1,24 @@
 {
   "format": 1,
   "restore": {
-    "C:\\Users\\neuge\\source\\repos\\Miskota\\D03CBX_HFT_2023241\\D03CBX_HFT_2023241.Endpoint\\D03CBX_HFT_2023241.Endpoint.csproj": {}
+    "C:\\Users\\neuge\\Source\\Repos\\Miskota\\D03CBX_HFT_2023241\\D03CBX_HFT_2023241.Endpoint\\D03CBX_HFT_2023241.Endpoint.csproj": {}
   },
   "projects": {
-    "C:\\Users\\neuge\\source\\repos\\Miskota\\D03CBX_HFT_2023241\\D03CBX_HFT_2023241.Endpoint\\D03CBX_HFT_2023241.Endpoint.csproj": {
+    "C:\\Users\\neuge\\Source\\Repos\\Miskota\\D03CBX_HFT_2023241\\D03CBX_HFT_2023241.Endpoint\\D03CBX_HFT_2023241.Endpoint.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\neuge\\source\\repos\\Miskota\\D03CBX_HFT_2023241\\D03CBX_HFT_2023241.Endpoint\\D03CBX_HFT_2023241.Endpoint.csproj",
+        "projectUniqueName": "C:\\Users\\neuge\\Source\\Repos\\Miskota\\D03CBX_HFT_2023241\\D03CBX_HFT_2023241.Endpoint\\D03CBX_HFT_2023241.Endpoint.csproj",
         "projectName": "D03CBX_HFT_2023241.Endpoint",
-        "projectPath": "C:\\Users\\neuge\\source\\repos\\Miskota\\D03CBX_HFT_2023241\\D03CBX_HFT_2023241.Endpoint\\D03CBX_HFT_2023241.Endpoint.csproj",
+        "projectPath": "C:\\Users\\neuge\\Source\\Repos\\Miskota\\D03CBX_HFT_2023241\\D03CBX_HFT_2023241.Endpoint\\D03CBX_HFT_2023241.Endpoint.csproj",
         "packagesPath": "C:\\Users\\neuge\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\neuge\\source\\repos\\Miskota\\D03CBX_HFT_2023241\\D03CBX_HFT_2023241.Endpoint\\obj\\",
+        "outputPath": "C:\\Users\\neuge\\Source\\Repos\\Miskota\\D03CBX_HFT_2023241\\D03CBX_HFT_2023241.Endpoint\\obj\\",
         "projectStyle": "PackageReference",
+        "fallbackFolders": [
+          "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"
+        ],
         "configFilePaths": [
           "C:\\Users\\neuge\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.FallbackLocation.config",
           "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
         ],
         "originalTargetFrameworks": [
@@ -22,21 +26,21 @@
         ],
         "sources": {
           "C:\\Program Files (x86)\\Microsoft SDKs\\NuGetPackages\\": {},
-          "C:\\Program Files\\dotnet\\sdk\\7.0.306\\Sdks\\Microsoft.NET.Sdk.Web\\library-packs": {},
+          "C:\\Program Files\\dotnet\\library-packs": {},
           "https://api.nuget.org/v3/index.json": {}
         },
         "frameworks": {
           "net5.0": {
             "targetAlias": "net5.0",
             "projectReferences": {
-              "C:\\Users\\neuge\\source\\repos\\Miskota\\D03CBX_HFT_2023241\\D03CBX_HFT_2023241.Logic\\D03CBX_HFT_2023241.Logic.csproj": {
-                "projectPath": "C:\\Users\\neuge\\source\\repos\\Miskota\\D03CBX_HFT_2023241\\D03CBX_HFT_2023241.Logic\\D03CBX_HFT_2023241.Logic.csproj"
+              "C:\\Users\\neuge\\Source\\Repos\\Miskota\\D03CBX_HFT_2023241\\D03CBX_HFT_2023241.Logic\\D03CBX_HFT_2023241.Logic.csproj": {
+                "projectPath": "C:\\Users\\neuge\\Source\\Repos\\Miskota\\D03CBX_HFT_2023241\\D03CBX_HFT_2023241.Logic\\D03CBX_HFT_2023241.Logic.csproj"
               },
-              "C:\\Users\\neuge\\source\\repos\\Miskota\\D03CBX_HFT_2023241\\D03CBX_HFT_2023241.Models\\D03CBX_HFT_2023241.Models.csproj": {
-                "projectPath": "C:\\Users\\neuge\\source\\repos\\Miskota\\D03CBX_HFT_2023241\\D03CBX_HFT_2023241.Models\\D03CBX_HFT_2023241.Models.csproj"
+              "C:\\Users\\neuge\\Source\\Repos\\Miskota\\D03CBX_HFT_2023241\\D03CBX_HFT_2023241.Models\\D03CBX_HFT_2023241.Models.csproj": {
+                "projectPath": "C:\\Users\\neuge\\Source\\Repos\\Miskota\\D03CBX_HFT_2023241\\D03CBX_HFT_2023241.Models\\D03CBX_HFT_2023241.Models.csproj"
               },
-              "C:\\Users\\neuge\\source\\repos\\Miskota\\D03CBX_HFT_2023241\\D03CBX_HFT_2023241.Repository\\D03CBX_HFT_2023241.Repository.csproj": {
-                "projectPath": "C:\\Users\\neuge\\source\\repos\\Miskota\\D03CBX_HFT_2023241\\D03CBX_HFT_2023241.Repository\\D03CBX_HFT_2023241.Repository.csproj"
+              "C:\\Users\\neuge\\Source\\Repos\\Miskota\\D03CBX_HFT_2023241\\D03CBX_HFT_2023241.Repository\\D03CBX_HFT_2023241.Repository.csproj": {
+                "projectPath": "C:\\Users\\neuge\\Source\\Repos\\Miskota\\D03CBX_HFT_2023241\\D03CBX_HFT_2023241.Repository\\D03CBX_HFT_2023241.Repository.csproj"
               }
             }
           }
@@ -79,21 +83,25 @@
               "privateAssets": "all"
             }
           },
-          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\7.0.306\\RuntimeIdentifierGraph.json"
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\8.0.201\\RuntimeIdentifierGraph.json"
         }
       }
     },
-    "C:\\Users\\neuge\\source\\repos\\Miskota\\D03CBX_HFT_2023241\\D03CBX_HFT_2023241.Logic\\D03CBX_HFT_2023241.Logic.csproj": {
+    "C:\\Users\\neuge\\Source\\Repos\\Miskota\\D03CBX_HFT_2023241\\D03CBX_HFT_2023241.Logic\\D03CBX_HFT_2023241.Logic.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\neuge\\source\\repos\\Miskota\\D03CBX_HFT_2023241\\D03CBX_HFT_2023241.Logic\\D03CBX_HFT_2023241.Logic.csproj",
+        "projectUniqueName": "C:\\Users\\neuge\\Source\\Repos\\Miskota\\D03CBX_HFT_2023241\\D03CBX_HFT_2023241.Logic\\D03CBX_HFT_2023241.Logic.csproj",
         "projectName": "D03CBX_HFT_2023241.Logic",
-        "projectPath": "C:\\Users\\neuge\\source\\repos\\Miskota\\D03CBX_HFT_2023241\\D03CBX_HFT_2023241.Logic\\D03CBX_HFT_2023241.Logic.csproj",
+        "projectPath": "C:\\Users\\neuge\\Source\\Repos\\Miskota\\D03CBX_HFT_2023241\\D03CBX_HFT_2023241.Logic\\D03CBX_HFT_2023241.Logic.csproj",
         "packagesPath": "C:\\Users\\neuge\\.nuget\\packages\\",
         "outputPath": "C:\\Users\\neuge\\Source\\Repos\\Miskota\\D03CBX_HFT_2023241\\D03CBX_HFT_2023241.Logic\\obj\\",
         "projectStyle": "PackageReference",
+        "fallbackFolders": [
+          "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"
+        ],
         "configFilePaths": [
           "C:\\Users\\neuge\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.FallbackLocation.config",
           "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
         ],
         "originalTargetFrameworks": [
@@ -101,17 +109,18 @@
         ],
         "sources": {
           "C:\\Program Files (x86)\\Microsoft SDKs\\NuGetPackages\\": {},
+          "C:\\Program Files\\dotnet\\library-packs": {},
           "https://api.nuget.org/v3/index.json": {}
         },
         "frameworks": {
           "net5.0": {
             "targetAlias": "net5.0",
             "projectReferences": {
-              "C:\\Users\\neuge\\source\\repos\\Miskota\\D03CBX_HFT_2023241\\D03CBX_HFT_2023241.Models\\D03CBX_HFT_2023241.Models.csproj": {
-                "projectPath": "C:\\Users\\neuge\\source\\repos\\Miskota\\D03CBX_HFT_2023241\\D03CBX_HFT_2023241.Models\\D03CBX_HFT_2023241.Models.csproj"
+              "C:\\Users\\neuge\\Source\\Repos\\Miskota\\D03CBX_HFT_2023241\\D03CBX_HFT_2023241.Models\\D03CBX_HFT_2023241.Models.csproj": {
+                "projectPath": "C:\\Users\\neuge\\Source\\Repos\\Miskota\\D03CBX_HFT_2023241\\D03CBX_HFT_2023241.Models\\D03CBX_HFT_2023241.Models.csproj"
               },
-              "C:\\Users\\neuge\\source\\repos\\Miskota\\D03CBX_HFT_2023241\\D03CBX_HFT_2023241.Repository\\D03CBX_HFT_2023241.Repository.csproj": {
-                "projectPath": "C:\\Users\\neuge\\source\\repos\\Miskota\\D03CBX_HFT_2023241\\D03CBX_HFT_2023241.Repository\\D03CBX_HFT_2023241.Repository.csproj"
+              "C:\\Users\\neuge\\Source\\Repos\\Miskota\\D03CBX_HFT_2023241\\D03CBX_HFT_2023241.Repository\\D03CBX_HFT_2023241.Repository.csproj": {
+                "projectPath": "C:\\Users\\neuge\\Source\\Repos\\Miskota\\D03CBX_HFT_2023241\\D03CBX_HFT_2023241.Repository\\D03CBX_HFT_2023241.Repository.csproj"
               }
             }
           }
@@ -141,21 +150,25 @@
               "privateAssets": "all"
             }
           },
-          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\7.0.306\\RuntimeIdentifierGraph.json"
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\8.0.201\\RuntimeIdentifierGraph.json"
         }
       }
     },
-    "C:\\Users\\neuge\\source\\repos\\Miskota\\D03CBX_HFT_2023241\\D03CBX_HFT_2023241.Models\\D03CBX_HFT_2023241.Models.csproj": {
+    "C:\\Users\\neuge\\Source\\Repos\\Miskota\\D03CBX_HFT_2023241\\D03CBX_HFT_2023241.Models\\D03CBX_HFT_2023241.Models.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\neuge\\source\\repos\\Miskota\\D03CBX_HFT_2023241\\D03CBX_HFT_2023241.Models\\D03CBX_HFT_2023241.Models.csproj",
+        "projectUniqueName": "C:\\Users\\neuge\\Source\\Repos\\Miskota\\D03CBX_HFT_2023241\\D03CBX_HFT_2023241.Models\\D03CBX_HFT_2023241.Models.csproj",
         "projectName": "D03CBX_HFT_2023241.Models",
-        "projectPath": "C:\\Users\\neuge\\source\\repos\\Miskota\\D03CBX_HFT_2023241\\D03CBX_HFT_2023241.Models\\D03CBX_HFT_2023241.Models.csproj",
+        "projectPath": "C:\\Users\\neuge\\Source\\Repos\\Miskota\\D03CBX_HFT_2023241\\D03CBX_HFT_2023241.Models\\D03CBX_HFT_2023241.Models.csproj",
         "packagesPath": "C:\\Users\\neuge\\.nuget\\packages\\",
         "outputPath": "C:\\Users\\neuge\\Source\\Repos\\Miskota\\D03CBX_HFT_2023241\\D03CBX_HFT_2023241.Models\\obj\\",
         "projectStyle": "PackageReference",
+        "fallbackFolders": [
+          "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"
+        ],
         "configFilePaths": [
           "C:\\Users\\neuge\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.FallbackLocation.config",
           "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
         ],
         "originalTargetFrameworks": [
@@ -163,6 +176,7 @@
         ],
         "sources": {
           "C:\\Program Files (x86)\\Microsoft SDKs\\NuGetPackages\\": {},
+          "C:\\Program Files\\dotnet\\library-packs": {},
           "https://api.nuget.org/v3/index.json": {}
         },
         "frameworks": {
@@ -196,21 +210,25 @@
               "privateAssets": "all"
             }
           },
-          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\7.0.306\\RuntimeIdentifierGraph.json"
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\8.0.201\\RuntimeIdentifierGraph.json"
         }
       }
     },
-    "C:\\Users\\neuge\\source\\repos\\Miskota\\D03CBX_HFT_2023241\\D03CBX_HFT_2023241.Repository\\D03CBX_HFT_2023241.Repository.csproj": {
+    "C:\\Users\\neuge\\Source\\Repos\\Miskota\\D03CBX_HFT_2023241\\D03CBX_HFT_2023241.Repository\\D03CBX_HFT_2023241.Repository.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\neuge\\source\\repos\\Miskota\\D03CBX_HFT_2023241\\D03CBX_HFT_2023241.Repository\\D03CBX_HFT_2023241.Repository.csproj",
+        "projectUniqueName": "C:\\Users\\neuge\\Source\\Repos\\Miskota\\D03CBX_HFT_2023241\\D03CBX_HFT_2023241.Repository\\D03CBX_HFT_2023241.Repository.csproj",
         "projectName": "D03CBX_HFT_2023241.Repository",
-        "projectPath": "C:\\Users\\neuge\\source\\repos\\Miskota\\D03CBX_HFT_2023241\\D03CBX_HFT_2023241.Repository\\D03CBX_HFT_2023241.Repository.csproj",
+        "projectPath": "C:\\Users\\neuge\\Source\\Repos\\Miskota\\D03CBX_HFT_2023241\\D03CBX_HFT_2023241.Repository\\D03CBX_HFT_2023241.Repository.csproj",
         "packagesPath": "C:\\Users\\neuge\\.nuget\\packages\\",
         "outputPath": "C:\\Users\\neuge\\Source\\Repos\\Miskota\\D03CBX_HFT_2023241\\D03CBX_HFT_2023241.Repository\\obj\\",
         "projectStyle": "PackageReference",
+        "fallbackFolders": [
+          "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"
+        ],
         "configFilePaths": [
           "C:\\Users\\neuge\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.FallbackLocation.config",
           "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
         ],
         "originalTargetFrameworks": [
@@ -218,14 +236,15 @@
         ],
         "sources": {
           "C:\\Program Files (x86)\\Microsoft SDKs\\NuGetPackages\\": {},
+          "C:\\Program Files\\dotnet\\library-packs": {},
           "https://api.nuget.org/v3/index.json": {}
         },
         "frameworks": {
           "net5.0": {
             "targetAlias": "net5.0",
             "projectReferences": {
-              "C:\\Users\\neuge\\source\\repos\\Miskota\\D03CBX_HFT_2023241\\D03CBX_HFT_2023241.Models\\D03CBX_HFT_2023241.Models.csproj": {
-                "projectPath": "C:\\Users\\neuge\\source\\repos\\Miskota\\D03CBX_HFT_2023241\\D03CBX_HFT_2023241.Models\\D03CBX_HFT_2023241.Models.csproj"
+              "C:\\Users\\neuge\\Source\\Repos\\Miskota\\D03CBX_HFT_2023241\\D03CBX_HFT_2023241.Models\\D03CBX_HFT_2023241.Models.csproj": {
+                "projectPath": "C:\\Users\\neuge\\Source\\Repos\\Miskota\\D03CBX_HFT_2023241\\D03CBX_HFT_2023241.Models\\D03CBX_HFT_2023241.Models.csproj"
               }
             }
           }
@@ -279,7 +298,7 @@
               "privateAssets": "all"
             }
           },
-          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\7.0.306\\RuntimeIdentifierGraph.json"
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\8.0.201\\RuntimeIdentifierGraph.json"
         }
       }
     }
