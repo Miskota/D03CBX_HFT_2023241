@@ -1,3 +1,4 @@
+using D03CBX_HFT_2023241.Endpoint.Services;
 using D03CBX_HFT_2023241.Logic;
 using D03CBX_HFT_2023241.Models;
 using D03CBX_HFT_2023241.Repository;
@@ -38,6 +39,8 @@ namespace D03CBX_HFT_2023241.Endpoint {
             services.AddTransient<IWriterLogic, WriterLogic>();
             //services.AddSingleton if AddTransient doesn't work
 
+            services.AddSignalR();
+
             services.AddControllers();
             services.AddSwaggerGen(c => {
                 c.SwaggerDoc("v1", new OpenApiInfo { Title = "D03CBX_HFT_2023241.Endpoint", Version = "v1" });
@@ -66,6 +69,7 @@ namespace D03CBX_HFT_2023241.Endpoint {
 
             app.UseEndpoints(endpoints => {
                 endpoints.MapControllers();
+                endpoints.MapHub<SignalRHub>("/hub");
             });
         }
     }

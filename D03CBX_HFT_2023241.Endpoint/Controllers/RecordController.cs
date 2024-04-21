@@ -1,6 +1,9 @@
-﻿using D03CBX_HFT_2023241.Logic;
+﻿using D03CBX_HFT_2023241.Endpoint.Services;
+using D03CBX_HFT_2023241.Logic;
 using D03CBX_HFT_2023241.Models;
 using Microsoft.AspNetCore.Mvc;
+using Microsoft.AspNetCore.SignalR;
+using Newtonsoft.Json.Linq;
 using System.Collections.Generic;
 
 // For more information on enabling Web API for empty projects, visit https://go.microsoft.com/fwlink/?LinkID=397860
@@ -12,10 +15,12 @@ namespace D03CBX_HFT_2023241.Endpoint.Controllers {
         // GET: api/<RecordController>
 
         IRecordLogic logic;
+        IHubContext<SignalRHub> hub;
 
-        public RecordController(IRecordLogic logic)
+        public RecordController(IRecordLogic logic, IHubContext<SignalRHub> hub)
         {
             this.logic = logic;
+            this.hub = hub;
         }
 
         [HttpGet]
@@ -33,18 +38,22 @@ namespace D03CBX_HFT_2023241.Endpoint.Controllers {
         [HttpPost]
         public void Create([FromBody] Record value) {
             this.logic.Create(value);
+            this.hub.Clients.All.SendAsync("RecordCreated", value);
         }
 
         // PUT api/<RecordController>/5
         [HttpPut]
         public void Update([FromBody] Record value) {
             this.logic.Update(value);
+            this.hub.Clients.All.SendAsync("RecordUpdated", value);
         }
 
         // DELETE api/<RecordController>/5
         [HttpDelete("{id}")]
         public void Delete(int id) {
+            var recordToDelete = this.logic.Read(id);
             this.logic.Delete(id);
+            this.hub.Clients.All.SendAsync("RecordDeleted", recordToDelete);
         }
     }
 }
