@@ -1,6 +1,7 @@
 ﻿using D03CBX_HFT_2023241.Models;
 using Microsoft.Toolkit.Mvvm.ComponentModel;
 using Microsoft.Toolkit.Mvvm.Input;
+using Newtonsoft.Json.Linq;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
@@ -37,25 +38,54 @@ namespace D03CBX_GUI_2023242.WpfClient
         private Writer selectedWriter;
         public  Record SelectedRecord {
             get { return selectedRecord; }
-            set { 
-                SetProperty(ref selectedRecord, value);
-                (DeleteRecordCommand as RelayCommand).NotifyCanExecuteChanged();
+            set {
+                if (value != null) {
+                    selectedRecord = new Record() { 
+                        RecordID = value.RecordID,
+                        Title = value.Title,
+                        Plays = value.Plays,
+                        Genre = value.Genre,
+                        Rating = value.Rating,
+                        Duration = value.Duration
+                    };
+
+                    //SetProperty(ref selectedRecord, value);
+                    OnPropertyChanged();
+                    (DeleteRecordCommand as RelayCommand).NotifyCanExecuteChanged();
+                }
             }
         }
 
         public Album SelectedAlbum {
             get { return selectedAlbum; }
-            set { 
-                SetProperty(ref selectedAlbum, value);
-                (DeleteAlbumCommand as RelayCommand).NotifyCanExecuteChanged();
+            set {
+                if (value != null) {
+                    selectedAlbum = new Album() {
+                        AlbumID = value.AlbumID,
+                        AlbumName = value.AlbumName,
+                        ReleaseYear = value.ReleaseYear,
+                        Genre = value.Genre
+                    };
+                    //SetProperty(ref selectedAlbum, value);
+                    OnPropertyChanged();
+                    (DeleteAlbumCommand as RelayCommand).NotifyCanExecuteChanged();
+                }
             }
         }
 
         public Writer SelectedWriter {
             get { return selectedWriter; }
-            set { 
-                SetProperty(ref selectedWriter, value);
-                (DeleteWriterCommand as RelayCommand).NotifyCanExecuteChanged();
+            set {
+                if (value != null) {
+                    selectedWriter = new Writer() {
+                        WriterName = value.WriterName,
+                        WriterID = value.WriterID,
+                        YearOfBirth = value.YearOfBirth
+                    };
+                    //SetProperty(ref selectedWriter, value);
+                    OnPropertyChanged();
+                    (DeleteWriterCommand as RelayCommand).NotifyCanExecuteChanged();
+                }
             }
         }
 
@@ -67,6 +97,8 @@ namespace D03CBX_GUI_2023242.WpfClient
         }
         public MainWindowViewModel()
         {
+            
+
             if (!IsInDesignMode) {
                 Records = new RestCollection<Record>("http://localhost:59244/", "record");
                 Albums = new RestCollection<Album>("http://localhost:59244/", "album");
@@ -74,7 +106,12 @@ namespace D03CBX_GUI_2023242.WpfClient
 
                 CreateRecordCommand = new RelayCommand(() => {
                     Records.Add(new Record() {
-
+                        // ID not required, handled on server side
+                        Title = SelectedRecord.Title,
+                        Plays = SelectedRecord.Plays,
+                        Genre = SelectedRecord.Genre,
+                        Rating = SelectedRecord.Rating,
+                        Duration = SelectedRecord.Duration
                     });
                 });
 
@@ -86,7 +123,7 @@ namespace D03CBX_GUI_2023242.WpfClient
                 });
 
                 UpdateRecordCommand = new RelayCommand(() => {
-
+                    Records.Update(SelectedRecord);
                 });
 
 
@@ -94,7 +131,11 @@ namespace D03CBX_GUI_2023242.WpfClient
 
 
                 CreateAlbumCommand = new RelayCommand(() => {
-
+                    Albums.Add(new Album() {
+                        AlbumName = SelectedAlbum.AlbumName,
+                        Genre = SelectedAlbum.Genre,
+                        ReleaseYear = SelectedAlbum.ReleaseYear
+                    });
                 });
 
                 DeleteAlbumCommand = new RelayCommand(() => {
@@ -105,7 +146,7 @@ namespace D03CBX_GUI_2023242.WpfClient
                 });
 
                 UpdateAlbumCommand = new RelayCommand(() => {
-
+                    Albums.Update(SelectedAlbum);
                 });
 
 
@@ -113,7 +154,10 @@ namespace D03CBX_GUI_2023242.WpfClient
 
 
                 CreateWriterCommand = new RelayCommand(() => {
-
+                    Writers.Add(new Writer() {
+                        WriterName = SelectedWriter.WriterName,
+                        YearOfBirth = SelectedWriter.YearOfBirth,
+                    });
                 });
 
                 DeleteWriterCommand = new RelayCommand(() => {
@@ -124,8 +168,15 @@ namespace D03CBX_GUI_2023242.WpfClient
                 });
 
                 UpdateWriterCommand = new RelayCommand(() => {
-
+                    Writers.Update(SelectedWriter);
                 });
+
+
+                // If the selected item is null it throws an exception if you try to create a new item
+                // Solution
+                SelectedRecord = new Record();
+                SelectedAlbum = new Album();
+                SelectedWriter = new Writer();
             }
         }
     }

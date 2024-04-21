@@ -41,7 +41,7 @@ namespace D03CBX_HFT_2023241.Models {
         }
 
         public override bool Equals(object obj) {
-            if (obj == null) {
+            if (obj == null || GetType() != obj.GetType()) {
                 return false;
             }
 

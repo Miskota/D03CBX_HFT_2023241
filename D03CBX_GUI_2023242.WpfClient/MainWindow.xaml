@@ -27,7 +27,36 @@
         <StackPanel Grid.Column="0" VerticalAlignment="Bottom" DataContext="{Binding SelectedRecord}">
             <Label Content="Title" Background="LightBlue" Padding="5"/>
             <TextBox Text="{Binding Title}" Padding="5"></TextBox>
-            <Button Content="Update Record"/>
+            <Label Content="Genre" Background="LightBlue" Padding="5"/>
+            <!--TextBox Text="{Binding Genre}" Padding="5"/-->
+            <ComboBox Grid.Column="1" SelectedItem="{Binding Genre}">
+                <ComboBox.ItemsSource>
+                    <x:Array Type="{x:Type ComboBoxItem}">
+                        <ComboBoxItem>Classic</ComboBoxItem>
+                        <ComboBoxItem>Jazz</ComboBoxItem>
+                        <ComboBoxItem>Country</ComboBoxItem>
+                        <ComboBoxItem>Pop</ComboBoxItem>
+                        <ComboBoxItem>Rock</ComboBoxItem>
+                        <ComboBoxItem>Metal</ComboBoxItem>
+                        <ComboBoxItem>Electro</ComboBoxItem>
+                        <ComboBoxItem>Punk</ComboBoxItem>
+                        <ComboBoxItem>Folk</ComboBoxItem>
+                        <ComboBoxItem>Disco</ComboBoxItem>
+                        <ComboBoxItem>Funk</ComboBoxItem>
+                        <ComboBoxItem>Synth</ComboBoxItem>
+                        <ComboBoxItem>HipHop</ComboBoxItem>
+                    </x:Array>
+                </ComboBox.ItemsSource>
+            </ComboBox>
+            <Label Content="Plays" Background="LightBlue" Padding="5"/>
+            <TextBox Text="{Binding Plays}" Padding="5"/>
+            <Label Content="Duration" Background="LightBlue" Padding="5"/>
+            <TextBox Text="{Binding Duration}" Padding="5"/>
+            <Label Content="Rating" Background="LightBlue" Padding="5"/>
+            <TextBox Text="{Binding Rating}" Padding="5"/>
+            <Button Content="Create Record" Command="{Binding CreateRecordCommand}"></Button>
+            <Button Content="Update Record" Command="{Binding UpdateRecordCommand}"></Button>
+            <Button Content="Delete Record" Command="{Binding DeleteRecordCommand}"></Button>
         </StackPanel>
 
         <TextBlock Grid.Column="1" Text="Albumok listája" HorizontalAlignment="Center"/>
@@ -41,7 +70,35 @@
         <StackPanel Grid.Column="1" VerticalAlignment="Bottom" DataContext="{Binding SelectedAlbum}">
             <Label Content="Title" Background="LightBlue" Padding="5"/>
             <TextBox Text="{Binding Title}" Padding="5"></TextBox>
-            <Button Content="Update Album"/>
+            <Label Content="Genre" Background="LightBlue" Padding="5"/>
+            
+            <!--TextBox Text="{Binding Genre}" Padding="5"/-->
+            <ComboBox Grid.Column="1" SelectedItem="{Binding Genre}">
+                <ComboBox.ItemsSource>
+                    <x:Array Type="{x:Type ComboBoxItem}">
+                        <ComboBoxItem>Classic</ComboBoxItem>
+                        <ComboBoxItem>Jazz</ComboBoxItem>
+                        <ComboBoxItem>Country</ComboBoxItem>
+                        <ComboBoxItem>Pop</ComboBoxItem>
+                        <ComboBoxItem>Rock</ComboBoxItem>
+                        <ComboBoxItem>Metal</ComboBoxItem>
+                        <ComboBoxItem>Electro</ComboBoxItem>
+                        <ComboBoxItem>Punk</ComboBoxItem>
+                        <ComboBoxItem>Folk</ComboBoxItem>
+                        <ComboBoxItem>Disco</ComboBoxItem>
+                        <ComboBoxItem>Funk</ComboBoxItem>
+                        <ComboBoxItem>Synth</ComboBoxItem>
+                        <ComboBoxItem>HipHop</ComboBoxItem>
+                    </x:Array>
+                </ComboBox.ItemsSource>
+            </ComboBox>
+
+            <Label Content="Year of release" Background="LightBlue" Padding="5"/>
+            <TextBox Text="{Binding ReleaseYear}" Padding="5"/>
+            <Button Content="Create Album" Command="{Binding CreateAlbumCommand}"></Button>
+            <Button Content="Update Album" Command="{Binding UpdateAlbumCommand}"></Button>
+            <Button Content="Delete Album" Command="{Binding DeleteAlbumCommand}"></Button>
+
         </StackPanel>
 
         <TextBlock Grid.Column="2" Text="Előadók listája" HorizontalAlignment="Center"/>
@@ -54,23 +111,20 @@
         </ListBox>
         <StackPanel Grid.Column="2" VerticalAlignment="Bottom" DataContext="{Binding SelectedWriter}">
             <Label Content="Name" Background="LightBlue" Padding="5"/>
-            <TextBox Text="{Binding Name}" Padding="5"></TextBox>
-            <Button Content="Update Writer"/>
+            <TextBox Text="{Binding Name}" Padding="5"/>
+            <Label Content="Year of Birth" Background="LightBlue" Padding="5"/>
+            <TextBox Text="{Binding YearOfBirth}" Padding="5"/>
+            <Button Content="Create Writer" Command="{Binding CreateWriterCommand}"></Button>
+            <Button Content="Update Writer" Command="{Binding UpdateWriterCommand}"></Button>
+            <Button Content="Delete Writer" Command="{Binding DeleteWriterCommand}"></Button>
 
         </StackPanel>
 
         <StackPanel Grid.Column="3">
-            <Button Content="Create Record" Command="{Binding CreateRecordCommand}"></Button>
-            <Button Content="Update Record" Command="{Binding UpdateRecordCommand}"></Button>
-            <Button Content="Delete Record" Command="{Binding DeleteRecordCommand}"></Button>
+            
 
-            <Button Content="Create Album" Command="{Binding CreateAlbumCommand}"></Button>
-            <Button Content="Update Album" Command="{Binding UpdateAlbumCommand}"></Button>
-            <Button Content="Delete Album" Command="{Binding DeleteAlbumCommand}"></Button>
-
-            <Button Content="Create Writer" Command="{Binding CreateWriterCommand}"></Button>
-            <Button Content="Update Writer" Command="{Binding UpdateWriterCommand}"></Button>
-            <Button Content="Delete Writer" Command="{Binding DeleteWriterCommand}"></Button>
+            
+            
 
             <Button Content="NonCrud"></Button>
         </StackPanel>
