@@ -14,7 +14,7 @@ using System.Reflection;
 [assembly: System.Reflection.AssemblyCompanyAttribute("D03CBX_HFT_2023241.Test")]
 [assembly: System.Reflection.AssemblyConfigurationAttribute("Debug")]
 [assembly: System.Reflection.AssemblyFileVersionAttribute("1.0.0.0")]
-[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+bbc2bf80646ab911fbd69783ac7730ba53a5e5fa")]
+[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+4e4b9a900e96a87674324f3fa182be91a0c2cf76")]
 [assembly: System.Reflection.AssemblyProductAttribute("D03CBX_HFT_2023241.Test")]
 [assembly: System.Reflection.AssemblyTitleAttribute("D03CBX_HFT_2023241.Test")]
 [assembly: System.Reflection.AssemblyVersionAttribute("1.0.0.0")]

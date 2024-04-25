@@ -1,6 +1,5 @@
-﻿table{
+﻿table {
     width: 100%;
-
 }
 
 table, th, td {
@@ -15,25 +14,41 @@ th, td {
     padding: 5px;
 }
 
-th{
+th {
     background-color: lightblue;
 }
 
-#formdiv{
+#updateformdiv {
+    display: none;
+    margin-bottom: 20px;
+}
+
+    #updateformdiv label, button, input {
+        margin: 10px;
+        padding: 7px;
+    }
+
+    #updateformdiv label {
+        font-weight: bolder;
+    }
+
+#formdiv {
     display: flex;
     flex-direction: column;
     margin-bottom: 20px;
 }
 
-#formdiv label, button, input{
-    margin: 10px;
-    padding: 7px;
-}
+    #formdiv label, button, input {
+        margin: 10px;
+        padding: 7px;
+    }
 
-#formdiv label{
-    font-weight: bolder;
-}
+    #formdiv label {
+        font-weight: bolder;
+    }
 
-table button{
+
+
+table button {
     padding: 2px;
 }

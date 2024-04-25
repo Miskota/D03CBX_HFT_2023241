@@ -54,9 +54,7 @@
             <TextBox Text="{Binding Duration}" Padding="5"/>
             <Label Content="Rating" Background="LightBlue" Padding="5"/>
             <TextBox Text="{Binding Rating}" Padding="5"/>
-            <Button Content="Create Record" Command="{Binding CreateRecordCommand}"></Button>
-            <Button Content="Update Record" Command="{Binding UpdateRecordCommand}"></Button>
-            <Button Content="Delete Record" Command="{Binding DeleteRecordCommand}"></Button>
+            
         </StackPanel>
 
         <TextBlock Grid.Column="1" Text="Albumok listája" HorizontalAlignment="Center"/>
@@ -95,9 +93,7 @@
 
             <Label Content="Year of release" Background="LightBlue" Padding="5"/>
             <TextBox Text="{Binding ReleaseYear}" Padding="5"/>
-            <Button Content="Create Album" Command="{Binding CreateAlbumCommand}"></Button>
-            <Button Content="Update Album" Command="{Binding UpdateAlbumCommand}"></Button>
-            <Button Content="Delete Album" Command="{Binding DeleteAlbumCommand}"></Button>
+            
 
         </StackPanel>
 
@@ -114,17 +110,22 @@
             <TextBox Text="{Binding Name}" Padding="5"/>
             <Label Content="Year of Birth" Background="LightBlue" Padding="5"/>
             <TextBox Text="{Binding YearOfBirth}" Padding="5"/>
-            <Button Content="Create Writer" Command="{Binding CreateWriterCommand}"></Button>
-            <Button Content="Update Writer" Command="{Binding UpdateWriterCommand}"></Button>
-            <Button Content="Delete Writer" Command="{Binding DeleteWriterCommand}"></Button>
+            
 
         </StackPanel>
 
         <StackPanel Grid.Column="3">
-            
 
-            
-            
+
+            <Button Content="Create Record" Command="{Binding CreateRecordCommand}"></Button>
+            <Button Content="Update Record" Command="{Binding UpdateRecordCommand}"></Button>
+            <Button Content="Delete Record" Command="{Binding DeleteRecordCommand}"></Button>
+            <Button Content="Create Album" Command="{Binding CreateAlbumCommand}"></Button>
+            <Button Content="Update Album" Command="{Binding UpdateAlbumCommand}"></Button>
+            <Button Content="Delete Album" Command="{Binding DeleteAlbumCommand}"></Button>
+            <Button Content="Create Writer" Command="{Binding CreateWriterCommand}"></Button>
+            <Button Content="Update Writer" Command="{Binding UpdateWriterCommand}"></Button>
+            <Button Content="Delete Writer" Command="{Binding DeleteWriterCommand}"></Button>
 
             <Button Content="NonCrud"></Button>
         </StackPanel>
