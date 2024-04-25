@@ -31,6 +31,13 @@ namespace D03CBX_GUI_2023242.WpfClient
         public ICommand DeleteWriterCommand { get; set; }
         public ICommand UpdateWriterCommand { get; set; }
 
+        // Non-Crud Commands
+        public ICommand Top10AlbumCountCommand { get; set; } // IEnumerable<Writer>
+        public ICommand GenreStatisticsCommand { get; set; } // IEnumerable<string>
+        public ICommand Top10RatedCommand { get; set; } // IEnumerable<Record>
+        public ICommand Top10PlaysCommand { get; set; } // IEnumerable<Record>
+        public ICommand AveragePlaysAlbumCommand { get; set; } // IEnumerable<string>
+
 
 
         private Record selectedRecord;
@@ -100,9 +107,37 @@ namespace D03CBX_GUI_2023242.WpfClient
             
 
             if (!IsInDesignMode) {
-                Records = new RestCollection<Record>("http://localhost:59244/", "record");
-                Albums = new RestCollection<Album>("http://localhost:59244/", "album");
-                Writers = new RestCollection<Writer>("http://localhost:59244/", "writer");
+                Records = new RestCollection<Record>("http://localhost:59244/", "record", "hub");
+                Albums = new RestCollection<Album>("http://localhost:59244/", "album", "hub");
+                Writers = new RestCollection<Writer>("http://localhost:59244/", "writer", "hub");
+
+
+
+                Top10AlbumCountCommand = new RelayCommand(() =>
+                {
+                    var Result = new RestService("http://localhost:59244/").Get<Writer>("NonCrud/Top10AlbumCount");
+                });
+
+                GenreStatisticsCommand = new RelayCommand(() =>
+                {
+                    
+                });
+
+                Top10RatedCommand = new RelayCommand(() =>
+                {
+                    
+                });
+
+                Top10PlaysCommand = new RelayCommand(() =>
+                {
+                   
+                });
+
+                AveragePlaysAlbumCommand = new RelayCommand(() =>
+                {
+                    
+                });
+
 
                 CreateRecordCommand = new RelayCommand(() => {
                     Records.Add(new Record() {

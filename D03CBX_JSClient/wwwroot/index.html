@@ -1,0 +1,65 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8" />
+    <title>Record UI</title>
+    <link rel="stylesheet" href="style.css"/>
+</head>
+<body>
+    <h1> Records </h1>
+
+    <div id="formdiv">
+        <label>Record Title</label>
+        <input type="text" id="recordTitleInput" />
+
+        <label>Plays</label>
+        <input type="number" id="recordPlaysInput" />
+
+        <label>Rating</label>
+        <input type="number" id="recordRatingInput" />
+
+        <label>Duration</label>
+        <input type="number" id="recordDurationInput" />
+
+        <label>Genre</label>
+        <select id="recordGenre" name="recordGenre">
+            <option value="0">Classic</option>
+            <option value="1">Jazz</option>
+            <option value="2">Country</option>
+            <option value="3">Pop</option>
+            <option value="4">Rock</option>
+            <option value="5">Metal</option>
+            <option value="6">Electro</option>
+            <option value="7">Punk</option>
+            <option value="8">Folk</option>
+            <option value="9">Disco</option>
+            <option value="10">Funk</option>
+            <option value="11">Synth</option>
+            <option value="12">HipHop</option>
+        </select>
+
+        <label>AlbumID</label>
+        <input type="number" id="recordAlbumIDInput" />
+
+        <button type="button" onclick="create()">Add Record</button>
+
+
+
+    </div>
+
+    <table>
+        <thead>
+            <tr>
+                <th>ID</th>
+                <th>Title</th>
+                <th>Actions</th>
+            </tr>
+        </thead>
+        <tbody id="resultarea">
+        </tbody>
+    </table>
+ 
+    <script src ="https://cdnjs.cloudflare.com/ajax/libs/microsoft-signalr/6.0.1/signalr.js"></script>
+    <script src="script.js"></script>
+</body>
+</html>

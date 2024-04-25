@@ -1,8 +1,8 @@
 {
   "version": 2,
-  "dgSpecHash": "2qvCLgRV/89US7KuDPQv5+CdJHRzgRKYrsJ6nVzgosecrI+aV54wKXUZEoiSBQ2vgP3KZMRq9N80qNzGHpORxA==",
+  "dgSpecHash": "OXcdW67vnAmEGC+nHgbc/qQBGWJKmt0agD3esqci1Rud9EsDaxW9Ojfz3v/0/qqi3Z1tMjhBUrb4KEOokhle4w==",
   "success": true,
-  "projectFilePath": "C:\\Users\\neuge\\Source\\Repos\\Miskota\\D03CBX_HFT_2023241\\D03CBX_HFT_2023241.Test\\D03CBX_HFT_2023241.Test.csproj",
+  "projectFilePath": "C:\\Users\\neuge\\source\\repos\\Miskota\\D03CBX_HFT_2023241\\D03CBX_HFT_2023241.Test\\D03CBX_HFT_2023241.Test.csproj",
   "expectedPackageFiles": [
     "C:\\Users\\neuge\\.nuget\\packages\\castle.core\\4.4.1\\castle.core.4.4.1.nupkg.sha512",
     "C:\\Users\\neuge\\.nuget\\packages\\microsoft.codecoverage\\17.1.0\\microsoft.codecoverage.17.1.0.nupkg.sha512",

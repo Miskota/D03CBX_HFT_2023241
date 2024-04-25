@@ -1,8 +1,8 @@
 {
   "version": 2,
-  "dgSpecHash": "bb+7YjR70CkcRYlQR/7m62USMPezZCk05le4AnorF6aamMkYHfFzNtBff+2mU8XIl6ZUmYxD/rxBg5A8FXIVlQ==",
+  "dgSpecHash": "kD0oyWG2hpjOBrwMXTutQOtqmUf1yI7FLecdxNx5lcwYYl2uejM2Wt3450VZwBqQrKc+mUh33R0Sa5qc0FYDXg==",
   "success": true,
-  "projectFilePath": "C:\\Users\\neuge\\Source\\Repos\\Miskota\\D03CBX_HFT_2023241\\D03CBX_HFT_2023241.Repository\\D03CBX_HFT_2023241.Repository.csproj",
+  "projectFilePath": "C:\\Users\\neuge\\source\\repos\\Miskota\\D03CBX_HFT_2023241\\D03CBX_HFT_2023241.Repository\\D03CBX_HFT_2023241.Repository.csproj",
   "expectedPackageFiles": [
     "C:\\Users\\neuge\\.nuget\\packages\\castle.core\\4.4.1\\castle.core.4.4.1.nupkg.sha512",
     "C:\\Users\\neuge\\.nuget\\packages\\humanizer.core\\2.8.26\\humanizer.core.2.8.26.nupkg.sha512",

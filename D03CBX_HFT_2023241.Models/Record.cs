@@ -28,7 +28,7 @@ namespace D03CBX_HFT_2023241.Models {
         public int Plays { get; set; }
 
 
-        [Range(1.0, 5.0)]
+        //[Range(1.0, 5.0)]
         public double Rating { get; set; }
 
 
