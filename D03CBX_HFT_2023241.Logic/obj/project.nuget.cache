@@ -1,8 +1,8 @@
 {
   "version": 2,
-  "dgSpecHash": "70TaNpUwJwySEmwQk9ZuS0SYl7zu8GHkjHDCjy5tIdw0Ko2aBxoD2qJ4vyNd/YWxX+dlNvDGBySx7PzS0sQ6FQ==",
+  "dgSpecHash": "jFLMvVPHidHkl3/x+YOVCAMe8g2xgS7IrIUwSFkHyAYn+/e4HIsspxzSvcTgj9feM6tRxv5jSafdoHsfr6wNRw==",
   "success": true,
-  "projectFilePath": "C:\\Users\\neuge\\source\\repos\\Miskota\\D03CBX_HFT_2023241\\D03CBX_HFT_2023241.Logic\\D03CBX_HFT_2023241.Logic.csproj",
+  "projectFilePath": "C:\\Users\\neuge\\Source\\Repos\\Miskota\\D03CBX_HFT_2023241\\D03CBX_HFT_2023241.Logic\\D03CBX_HFT_2023241.Logic.csproj",
   "expectedPackageFiles": [
     "C:\\Users\\neuge\\.nuget\\packages\\castle.core\\4.4.1\\castle.core.4.4.1.nupkg.sha512",
     "C:\\Users\\neuge\\.nuget\\packages\\microsoft.csharp\\4.5.0\\microsoft.csharp.4.5.0.nupkg.sha512",

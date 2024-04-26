@@ -1,8 +1,8 @@
 {
   "version": 2,
-  "dgSpecHash": "5ko0/o5EOahhrSXUzw+n6dqi3Fq1J2qZCoTCtZ2qmPHi+EnHGhxfFt1yEJPeMtlqAy1mOVJ4GrksLXfB+gRfXA==",
+  "dgSpecHash": "ef4hjtKIun70/3zifXVB/SZqPvrGVejoY3D3tQPI6FSuR7KaVA/Qdz7glHAtB8iyHqpn0xMZLNOKAMvtLxr1/g==",
   "success": true,
-  "projectFilePath": "C:\\Users\\neuge\\source\\repos\\Miskota\\D03CBX_HFT_2023241\\D03CBX_HFT_2023241.Client\\D03CBX_HFT_2023241.Client.csproj",
+  "projectFilePath": "C:\\Users\\neuge\\Source\\Repos\\Miskota\\D03CBX_HFT_2023241\\D03CBX_HFT_2023241.Client\\D03CBX_HFT_2023241.Client.csproj",
   "expectedPackageFiles": [
     "C:\\Users\\neuge\\.nuget\\packages\\consolemenu-simple\\2.6.1\\consolemenu-simple.2.6.1.nupkg.sha512",
     "C:\\Users\\neuge\\.nuget\\packages\\microsoft.aspnet.webapi.client\\5.2.7\\microsoft.aspnet.webapi.client.5.2.7.nupkg.sha512",

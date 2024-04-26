@@ -8,6 +8,6 @@ build_property.PlatformNeutralAssembly =
 build_property.EnforceExtendedAnalyzerRules = 
 build_property._SupportedPlatformList = Linux,macOS,Windows
 build_property.RootNamespace = D03CBX_HFT_2023241.Test
-build_property.ProjectDir = C:\Users\neuge\source\repos\Miskota\D03CBX_HFT_2023241\D03CBX_HFT_2023241.Test\
+build_property.ProjectDir = C:\Users\neuge\Source\Repos\Miskota\D03CBX_HFT_2023241\D03CBX_HFT_2023241.Test\
 build_property.EnableComHosting = 
 build_property.EnableGeneratedComInterfaceComImportInterop = 
