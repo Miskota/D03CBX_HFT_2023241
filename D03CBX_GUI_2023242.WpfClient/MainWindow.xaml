@@ -14,8 +14,114 @@
             <ColumnDefinition Width="1*"/>
             <ColumnDefinition Width="1*"/>
             <ColumnDefinition Width="1*"/>
-            <ColumnDefinition Width="1*"/>
+            <ColumnDefinition Width="1*">
+            </ColumnDefinition>
         </Grid.ColumnDefinitions>
+        <Grid Grid.Column="3">
+            <Grid.RowDefinitions>
+                <RowDefinition Height="213*" />
+                <RowDefinition Height="110*" />
+                <RowDefinition Height="168*" />
+                <RowDefinition Height="95*" />
+                <RowDefinition Height="111*" />
+                <RowDefinition Height="134*" />
+                <RowDefinition Height="54*" />
+            </Grid.RowDefinitions>
+            <StackPanel VerticalAlignment="Center" DataContext="{Binding SelectedRecord}" Height="210">
+                <Label Content="Title" Background="LightBlue" Padding="2"/>
+                <TextBox Text="{Binding Title}" Padding="2"></TextBox>
+                <Label Content="Genre" Background="LightBlue" Padding="2"/>
+                <ComboBox Grid.Column="1" SelectedItem="{Binding Genre}">
+                    <ComboBox.ItemsSource>
+                        <x:Array Type="{x:Type ComboBoxItem}">
+                            <ComboBoxItem>Classic</ComboBoxItem>
+                            <ComboBoxItem>Jazz</ComboBoxItem>
+                            <ComboBoxItem>Country</ComboBoxItem>
+                            <ComboBoxItem>Pop</ComboBoxItem>
+                            <ComboBoxItem>Rock</ComboBoxItem>
+                            <ComboBoxItem>Metal</ComboBoxItem>
+                            <ComboBoxItem>Electro</ComboBoxItem>
+                            <ComboBoxItem>Punk</ComboBoxItem>
+                            <ComboBoxItem>Folk</ComboBoxItem>
+                            <ComboBoxItem>Disco</ComboBoxItem>
+                            <ComboBoxItem>Funk</ComboBoxItem>
+                            <ComboBoxItem>Synth</ComboBoxItem>
+                            <ComboBoxItem>HipHop</ComboBoxItem>
+                        </x:Array>
+                    </ComboBox.ItemsSource>
+                </ComboBox>
+                <Label Content="Plays" Background="LightBlue" Padding="2"/>
+                <TextBox Text="{Binding Plays}" Padding="2"/>
+                <Label Content="Duration" Background="LightBlue" Padding="2"/>
+                <TextBox Text="{Binding Duration}" Padding="2"/>
+                <Label Content="Rating" Background="LightBlue" Padding="2"/>
+                <TextBox Text="{Binding Rating}" Padding="2"/>
+
+            </StackPanel>
+            <StackPanel Grid.Row="1" VerticalAlignment="Top" Height="84">
+                <Button Content="Create Record" Command="{Binding CreateRecordCommand}" Padding="2"></Button>
+                <Separator Height="5"></Separator>
+                <Button Content="Update Record" Command="{Binding UpdateRecordCommand}" Padding="2"></Button>
+                <Separator Height="5"></Separator>
+                <Button Content="Delete Record" Command="{Binding DeleteRecordCommand}" Padding="2"></Button>
+            </StackPanel>
+
+            <StackPanel Grid.Row="2" DataContext="{Binding SelectedAlbum}" Margin="0,0,0,4">
+                <Label Content="Title" Background="LightBlue" Padding="5"/>
+                <TextBox Text="{Binding AlbumName}" Padding="5"></TextBox>
+                <Label Content="Genre" Background="LightBlue" Padding="5"/>
+
+                <!--TextBox Text="{Binding Genre}" Padding="5"/-->
+                <ComboBox Grid.Column="1" SelectedItem="{Binding Genre}">
+                    <ComboBox.ItemsSource>
+                        <x:Array Type="{x:Type ComboBoxItem}">
+                            <ComboBoxItem>Classic</ComboBoxItem>
+                            <ComboBoxItem>Jazz</ComboBoxItem>
+                            <ComboBoxItem>Country</ComboBoxItem>
+                            <ComboBoxItem>Pop</ComboBoxItem>
+                            <ComboBoxItem>Rock</ComboBoxItem>
+                            <ComboBoxItem>Metal</ComboBoxItem>
+                            <ComboBoxItem>Electro</ComboBoxItem>
+                            <ComboBoxItem>Punk</ComboBoxItem>
+                            <ComboBoxItem>Folk</ComboBoxItem>
+                            <ComboBoxItem>Disco</ComboBoxItem>
+                            <ComboBoxItem>Funk</ComboBoxItem>
+                            <ComboBoxItem>Synth</ComboBoxItem>
+                            <ComboBoxItem>HipHop</ComboBoxItem>
+                        </x:Array>
+                    </ComboBox.ItemsSource>
+                </ComboBox>
+
+                <Label Content="Year of release" Background="LightBlue" Padding="5"/>
+                <TextBox Text="{Binding ReleaseYear}" Padding="5"/>
+
+
+            </StackPanel>
+            <StackPanel Grid.Row="2" VerticalAlignment="Top" Height="84" Margin="0,160,0,0" Grid.RowSpan="2">
+                <Button Content="Create Album" Command="{Binding CreateAlbumCommand}" Padding="2"></Button>
+                <Separator Height="5"></Separator>
+                <Button Content="Update Album" Command="{Binding UpdateAlbumCommand}" Padding="2"></Button>
+                <Separator Height="5"></Separator>
+                <Button Content="Delete Album" Command="{Binding DeleteAlbumCommand}" Padding="2"></Button>
+            </StackPanel>
+
+            <StackPanel Grid.Row="3" DataContext="{Binding SelectedWriter}" Margin="0,94,0,2" Grid.RowSpan="2">
+                <Label Content="Name" Background="LightBlue" Padding="5"/>
+                <TextBox Text="{Binding WriterName}" Padding="5"/>
+                <Label Content="Year of Birth" Background="LightBlue" Padding="5"/>
+                <TextBox Text="{Binding YearOfBirth}" Padding="5"/>
+            </StackPanel>
+            <StackPanel Grid.Row="4" VerticalAlignment="Top" Height="84" Margin="0,111,0,0" Grid.RowSpan="2">
+                <Button Content="Create Writer" Command="{Binding CreateWriterCommand}" Padding="2"></Button>
+                <Separator Height="5"></Separator>
+                <Button Content="Update Writer" Command="{Binding UpdateWriterCommand}" Padding="2"></Button>
+                <Separator Height="5"></Separator>
+                <Button Content="Delete Writer" Command="{Binding DeleteWriterCommand}" Padding="2"></Button>
+            </StackPanel>
+            <StackPanel Grid.Row="6" VerticalAlignment="Top" Height="20" Margin="0,4,0,0">
+                <Button Content="NonCrud"></Button>
+            </StackPanel>
+        </Grid>
         <TextBlock Grid.Column="0" Text="Zenék listája" HorizontalAlignment="Center"/>
         <ListBox Grid.Column="0" Margin="0,20,0,0" ItemsSource="{Binding Records}" SelectedItem="{Binding SelectedRecord}">
             <ListBox.ItemTemplate>
@@ -24,38 +130,7 @@
                 </DataTemplate>
             </ListBox.ItemTemplate>
         </ListBox>
-        <StackPanel Grid.Column="3" VerticalAlignment="Top" DataContext="{Binding SelectedRecord}">
-            <Label Content="Title" Background="LightBlue" Padding="5"/>
-            <TextBox Text="{Binding Title}" Padding="5"></TextBox>
-            <Label Content="Genre" Background="LightBlue" Padding="5"/>
-            <!--TextBox Text="{Binding Genre}" Padding="5"/-->
-            <ComboBox Grid.Column="1" SelectedItem="{Binding Genre}">
-                <ComboBox.ItemsSource>
-                    <x:Array Type="{x:Type ComboBoxItem}">
-                        <ComboBoxItem>Classic</ComboBoxItem>
-                        <ComboBoxItem>Jazz</ComboBoxItem>
-                        <ComboBoxItem>Country</ComboBoxItem>
-                        <ComboBoxItem>Pop</ComboBoxItem>
-                        <ComboBoxItem>Rock</ComboBoxItem>
-                        <ComboBoxItem>Metal</ComboBoxItem>
-                        <ComboBoxItem>Electro</ComboBoxItem>
-                        <ComboBoxItem>Punk</ComboBoxItem>
-                        <ComboBoxItem>Folk</ComboBoxItem>
-                        <ComboBoxItem>Disco</ComboBoxItem>
-                        <ComboBoxItem>Funk</ComboBoxItem>
-                        <ComboBoxItem>Synth</ComboBoxItem>
-                        <ComboBoxItem>HipHop</ComboBoxItem>
-                    </x:Array>
-                </ComboBox.ItemsSource>
-            </ComboBox>
-            <Label Content="Plays" Background="LightBlue" Padding="5"/>
-            <TextBox Text="{Binding Plays}" Padding="5"/>
-            <Label Content="Duration" Background="LightBlue" Padding="5"/>
-            <TextBox Text="{Binding Duration}" Padding="5"/>
-            <Label Content="Rating" Background="LightBlue" Padding="5"/>
-            <TextBox Text="{Binding Rating}" Padding="5"/>
 
-        </StackPanel>
 
         <TextBlock Grid.Column="1" Text="Albumok listája" HorizontalAlignment="Center"/>
         <ListBox Grid.Column="1" Margin="0,20,0,0" ItemsSource="{Binding Albums}" SelectedItem="{Binding SelectedAlbum}">
@@ -65,37 +140,7 @@
                 </DataTemplate>
             </ListBox.ItemTemplate>
         </ListBox>
-        <StackPanel Grid.Column="3" VerticalAlignment="Center" DataContext="{Binding SelectedAlbum}">
-            <Label Content="Title" Background="LightBlue" Padding="5"/>
-            <TextBox Text="{Binding AlbumName}" Padding="5"></TextBox>
-            <Label Content="Genre" Background="LightBlue" Padding="5"/>
 
-            <!--TextBox Text="{Binding Genre}" Padding="5"/-->
-            <ComboBox Grid.Column="1" SelectedItem="{Binding Genre}">
-                <ComboBox.ItemsSource>
-                    <x:Array Type="{x:Type ComboBoxItem}">
-                        <ComboBoxItem>Classic</ComboBoxItem>
-                        <ComboBoxItem>Jazz</ComboBoxItem>
-                        <ComboBoxItem>Country</ComboBoxItem>
-                        <ComboBoxItem>Pop</ComboBoxItem>
-                        <ComboBoxItem>Rock</ComboBoxItem>
-                        <ComboBoxItem>Metal</ComboBoxItem>
-                        <ComboBoxItem>Electro</ComboBoxItem>
-                        <ComboBoxItem>Punk</ComboBoxItem>
-                        <ComboBoxItem>Folk</ComboBoxItem>
-                        <ComboBoxItem>Disco</ComboBoxItem>
-                        <ComboBoxItem>Funk</ComboBoxItem>
-                        <ComboBoxItem>Synth</ComboBoxItem>
-                        <ComboBoxItem>HipHop</ComboBoxItem>
-                    </x:Array>
-                </ComboBox.ItemsSource>
-            </ComboBox>
-
-            <Label Content="Year of release" Background="LightBlue" Padding="5"/>
-            <TextBox Text="{Binding ReleaseYear}" Padding="5"/>
-
-
-        </StackPanel>
 
         <TextBlock Grid.Column="2" Text="Előadók listája" HorizontalAlignment="Center"/>
         <ListBox Grid.Column="2" Margin="0,20,0,0" ItemsSource="{Binding Writers}" SelectedItem="{Binding SelectedWriter}">
@@ -105,33 +150,9 @@
                 </DataTemplate>
             </ListBox.ItemTemplate>
         </ListBox>
-        <StackPanel Grid.Column="3" VerticalAlignment="Bottom" Margin="0,100" DataContext="{Binding SelectedWriter}">
-            <Label Content="Name" Background="LightBlue" Padding="5"/>
-            <TextBox Text="{Binding WriterName}" Padding="5"/>
-            <Label Content="Year of Birth" Background="LightBlue" Padding="5"/>
-            <TextBox Text="{Binding YearOfBirth}" Padding="5"/>
 
 
-        </StackPanel>
 
-        <StackPanel Grid.Column="3" VerticalAlignment="Top" Margin="0,270,0,0">
-            <Button Content="Create Record" Command="{Binding CreateRecordCommand}"></Button>
-            <Button Content="Update Record" Command="{Binding UpdateRecordCommand}"></Button>
-            <Button Content="Delete Record" Command="{Binding DeleteRecordCommand}"></Button>
-        </StackPanel>
-        <StackPanel Grid.Column="3" VerticalAlignment="Top" Margin="0,505,0,0">
-            <Button Content="Create Album" Command="{Binding CreateAlbumCommand}"></Button>
-            <Button Content="Update Album" Command="{Binding UpdateAlbumCommand}"></Button>
-            <Button Content="Delete Album" Command="{Binding DeleteAlbumCommand}"></Button>
-        </StackPanel>
-        <StackPanel Grid.Column="3" VerticalAlignment="Bottom" Margin="0,40">
 
-            <Button Content="Create Writer" Command="{Binding CreateWriterCommand}"></Button>
-            <Button Content="Update Writer" Command="{Binding UpdateWriterCommand}"></Button>
-            <Button Content="Delete Writer" Command="{Binding DeleteWriterCommand}"></Button>
-        </StackPanel>
-        <StackPanel Grid.Column="3" VerticalAlignment="Bottom">
-            <Button Content="NonCrud"></Button>
-        </StackPanel>
     </Grid>
 </Window>
