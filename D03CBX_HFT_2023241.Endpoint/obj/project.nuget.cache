@@ -1,8 +1,8 @@
 {
   "version": 2,
-  "dgSpecHash": "vnzUq87AbJY+bNlEWgKOlG9g//qEQrhp4TEkXA4cqf6M8vJzDMguBbCGSw6y0uUHsnpbBp86H9maDZEUUs2/7g==",
+  "dgSpecHash": "P3uNFSyHLVxCPeW54j2xEBILSxvhU/HA52hBcPj3Pl0KEz2Gb0WJ6XHfAZnkdhKIp83pYIgY5prZHH4QuZH9DQ==",
   "success": true,
-  "projectFilePath": "C:\\Users\\neuge\\Source\\Repos\\Miskota\\D03CBX_HFT_2023241\\D03CBX_HFT_2023241.Endpoint\\D03CBX_HFT_2023241.Endpoint.csproj",
+  "projectFilePath": "C:\\Users\\neuge\\source\\repos\\Miskota\\D03CBX_HFT_2023241\\D03CBX_HFT_2023241.Endpoint\\D03CBX_HFT_2023241.Endpoint.csproj",
   "expectedPackageFiles": [
     "C:\\Users\\neuge\\.nuget\\packages\\castle.core\\4.4.1\\castle.core.4.4.1.nupkg.sha512",
     "C:\\Users\\neuge\\.nuget\\packages\\microsoft.aspnetcore.authentication.abstractions\\2.2.0\\microsoft.aspnetcore.authentication.abstractions.2.2.0.nupkg.sha512",

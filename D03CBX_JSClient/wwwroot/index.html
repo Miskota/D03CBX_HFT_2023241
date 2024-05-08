@@ -184,19 +184,24 @@
         <button type="button" onclick="updateWriter()">Edit Writer</button>
     </div>
 
-    <table>
-        <thead>
-            <tr>
-                <th>ID</th>
-                <th>Name</th>
-                <th>Actions</th>
-            </tr>
-        </thead>
-        <tbody id="resultareaWriter">
-        </tbody>
-    </table>
+    <div>
+        <table>
+            <thead>
+                <tr>
+                    <th>ID</th>
+                    <th>Name</th>
+                    <th>Actions</th>
+                </tr>
+            </thead>
+            <tbody id="resultareaWriter">
+            </tbody>
+        </table>
+    </div>
 
-
+    <div id="displayTopAlbum">
+        <button type="button" onclick="displayTopAlbumCount()">Writers with most albums</button>
+        <ul id="writerList"></ul>
+    </div>
 
 
     <script src="https://cdnjs.cloudflare.com/ajax/libs/microsoft-signalr/6.0.1/signalr.js"></script>

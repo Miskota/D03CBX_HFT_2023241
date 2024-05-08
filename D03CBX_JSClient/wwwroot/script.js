@@ -1,4 +1,19 @@
-﻿let records = [];
+﻿function displayTopAlbumCount() {
+    fetch('http://localhost:59244/noncrud/Top10AlbumCount')
+        .then(response => response.json())
+        .then(data => {
+            const writerList = document.getElementById('writerList');
+            writerList.innerHTML = '';
+            data.forEach(writer => {
+                const writerItem = document.createElement('li');
+                writerItem.textContent = `${writer.writerName}`;
+                writerList.appendChild(writerItem);
+            });
+        })
+        .catch(error => console.error('Error:', error));
+}
+
+let records = [];
 let albums = [];
 let writers = [];
 let connection = null;
@@ -11,7 +26,6 @@ getdata();
 getdataAlbum();
 getdataWriter();
 setupSignalR();
-
 function setupSignalR() {
     connection = new signalR.HubConnectionBuilder()
         .withUrl("http://localhost:59244/hub")
@@ -368,3 +382,4 @@ function updateWriter() {
         })
         .catch((error) => { console.error('Error:', error); });
 }
+

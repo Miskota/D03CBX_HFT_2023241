@@ -5,6 +5,7 @@ using Newtonsoft.Json.Linq;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
+using System.Dynamic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -18,6 +19,8 @@ namespace D03CBX_GUI_2023242.WpfClient
         public RestCollection<Record> Records { get; set; }
         public RestCollection<Album> Albums { get; set; }
         public RestCollection<Writer> Writers { get; set; }
+        //public RestCollection<Writer> Top10AlbumCount { get; set; }
+
 
         public ICommand CreateRecordCommand { get; set; }
         public ICommand DeleteRecordCommand { get; set; }
@@ -102,20 +105,37 @@ namespace D03CBX_GUI_2023242.WpfClient
                 return (bool)DependencyPropertyDescriptor.FromProperty(prop, typeof(FrameworkElement)).Metadata.DefaultValue;
             }
         }
+
+
+        // For non-crud
+        private RestService nonCrudRestService;
+
+        private IEnumerable<Writer> top10AlbumCount;
+        public IEnumerable<Writer> Top10AlbumCount {
+            get { return top10AlbumCount; }
+            set { SetProperty(ref top10AlbumCount, value);}
+        }
+
+        private IEnumerable<Record> top10Rated;
+        public IEnumerable<Record> Top10Rated {
+            get { return top10Rated; }
+            set { SetProperty(ref top10Rated, value); }
+        }
+
         public MainWindowViewModel()
         {
             
 
             if (!IsInDesignMode) {
+                nonCrudRestService = new("http://localhost:59244/");
                 Records = new RestCollection<Record>("http://localhost:59244/", "record", "hub");
                 Albums = new RestCollection<Album>("http://localhost:59244/", "album", "hub");
                 Writers = new RestCollection<Writer>("http://localhost:59244/", "writer", "hub");
-
-
+                
 
                 Top10AlbumCountCommand = new RelayCommand(() =>
                 {
-                    var Result = new RestService("http://localhost:59244/").Get<Writer>("NonCrud/Top10AlbumCount");
+                    Top10AlbumCount = nonCrudRestService.Get<Writer>("NonCrud/Top10AlbumCount");
                 });
 
                 GenreStatisticsCommand = new RelayCommand(() =>
@@ -125,7 +145,7 @@ namespace D03CBX_GUI_2023242.WpfClient
 
                 Top10RatedCommand = new RelayCommand(() =>
                 {
-                    
+                    Top10Rated = nonCrudRestService.Get<Record>("NonCrud/Top10Rated");
                 });
 
                 Top10PlaysCommand = new RelayCommand(() =>

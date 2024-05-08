@@ -16,7 +16,31 @@
             <ColumnDefinition Width="1*"/>
             <ColumnDefinition Width="1*">
             </ColumnDefinition>
+            <ColumnDefinition Width="1*"/>
         </Grid.ColumnDefinitions>
+        
+        <Grid Grid.Column="4">
+            <StackPanel>
+                <ListBox x:Name="Top10AlbumCountListBox" ItemsSource="{Binding Top10AlbumCount}" d:ItemsSource="{d:SampleData ItemCount=5}">
+                    <ListBox.ItemTemplate>
+                        <DataTemplate>
+                            <Label Content="{Binding WriterName}" Padding="5"/>
+                        </DataTemplate>
+                    </ListBox.ItemTemplate>
+                </ListBox>
+                <Button Content="Writers with the most albums" Command="{Binding Top10AlbumCountCommand}" Padding="2"/>
+
+                <ListBox ItemsSource="{Binding Top10Rated}" d:ItemsSource="{d:SampleData ItemCount=5}">
+                    <ListBox.ItemTemplate>
+                        <DataTemplate>
+                            <Label Content="{Binding Title}" Padding="5"/>
+                        </DataTemplate>
+                    </ListBox.ItemTemplate>
+                </ListBox>
+                <Button Content="Most rated songs" Command="{Binding Top10RatedCommand}" Padding="2"/>
+            </StackPanel>
+        </Grid>
+        
         <Grid Grid.Column="3">
             <Grid.RowDefinitions>
                 <RowDefinition Height="213*" />
@@ -118,9 +142,7 @@
                 <Separator Height="5"></Separator>
                 <Button Content="Delete Writer" Command="{Binding DeleteWriterCommand}" Padding="2"></Button>
             </StackPanel>
-            <StackPanel Grid.Row="6" VerticalAlignment="Top" Height="20" Margin="0,4,0,0">
-                <Button Content="NonCrud"></Button>
-            </StackPanel>
+            
         </Grid>
         <TextBlock Grid.Column="0" Text="Zenék listája" HorizontalAlignment="Center"/>
         <ListBox Grid.Column="0" Margin="0,20,0,0" ItemsSource="{Binding Records}" SelectedItem="{Binding SelectedRecord}">
