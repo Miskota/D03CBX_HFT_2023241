@@ -13,6 +13,37 @@
         .catch(error => console.error('Error:', error));
 }
 
+function displayTopRatedRecords() {
+    fetch('http://localhost:59244/noncrud/Top10Rated')
+        .then(response => response.json())
+        .then(data => {
+            const topRecordList = document.getElementById('topRecordList');
+            topRecordList.innerHTML = '';
+            data.forEach(record => {
+                const recordItem = document.createElement('li');
+                recordItem.textContent = `${record.title} - ${record.rating}`;
+                topRecordList.appendChild(recordItem);
+            });
+        })
+        .catch(error => console.error('Error:', error));
+}
+
+function displayWritersWithGenre() {
+    let writerGenre = parseInt(document.getElementById('writerGenre').value.trim(), 10);
+    fetch('http://localhost:59244/noncrud/WritersWithAlbumsInGenre/' + writerGenre)
+        .then(response => response.json())
+        .then(data => {
+            const writersGenreList = document.getElementById('writersGenreList');
+            writersGenreList.innerHTML = '';
+            data.forEach(writer => {
+                const writerItem = document.createElement('li');
+                writerItem.textContent = `${writer.writerName} - ${writer.yearOfBirth}`;
+                writersGenreList.appendChild(writerItem);
+            });
+        })
+        .catch(error => console.error('Error:', error));
+}
+
 let records = [];
 let albums = [];
 let writers = [];
@@ -161,6 +192,7 @@ function showupdateAlbum(id) {
     document.getElementById('albumNameUpdate').value = albums.find(t => t['albumID'] == id)['albumName'];
     document.getElementById('albumReleaseUpdate').value = albums.find(t => t['albumID'] == id)['releaseYear'];
     document.getElementById('albumGenreUpdate').value = albums.find(t => t['albumID'] == id)['genre'];
+    document.getElementById('albumWriterUpdate').value = albums.find(t => t['albumID'] == id)['writerID'];
     document.getElementById('updateformdivAlbum').style.display = 'flex';
     document.getElementById('updateformdivAlbum').style.flexDirection = 'column';
     albumIDToUpdate = id;
@@ -252,11 +284,13 @@ function createAlbum() {
     let albumName = document.getElementById('albumNameInput').value.trim();
     let albumGenre = parseInt(document.getElementById('albumGenre').value.trim(), 10);
     let albumYear = parseInt(document.getElementById('albumReleaseInput').value.trim(), 10);
+    let albumWriterID = parseInt(document.getElementById('albumWriterInput').value.trim(), 10);
 
     let jsonDataAlbum = {
         albumName: albumName,
         genre: albumGenre,
-        releaseYear: albumYear
+        releaseYear: albumYear,
+        writerID: albumWriterID
     }
 
     console.log(JSON.stringify(jsonDataAlbum));
@@ -337,14 +371,17 @@ function updateAlbum() {
     let albumName = document.getElementById('albumNameUpdate').value.trim();
     let albumGenre = parseInt(document.getElementById('albumGenreUpdate').value.trim(), 10);
     let albumYear = parseInt(document.getElementById('albumReleaseUpdate').value.trim(), 10);
+    let albumWriter = parseInt(document.getElementById('albumWriterUpdate').value.trim(), 10);
 
     let jsonDataAlbum = {
+        albumID: albumIDToUpdate,
         albumName: albumName,
+        writerID: albumWriter,
         genre: albumGenre,
         releaseYear: albumYear
     }
 
-    console.log(JSON.stringify(jsonData));
+    console.log(JSON.stringify(jsonDataAlbum));
 
     fetch('http://localhost:59244/album', {
         method: 'PUT',
@@ -364,11 +401,12 @@ function updateWriter() {
     let writerYear = parseInt(document.getElementById('writerYearUpdate').value.trim(), 10);
 
     let jsonDataWriter = {
-        name: writerName,
+        writerID: writerIDToUpdate,
+        writerName: writerName,
         yearOfBirth: writerYear
     }
 
-    console.log(JSON.stringify(jsonData));
+    console.log(JSON.stringify(jsonDataWriter));
 
     fetch('http://localhost:59244/writer', {
         method: 'PUT',

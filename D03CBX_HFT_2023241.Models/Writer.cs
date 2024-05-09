@@ -23,7 +23,9 @@ namespace D03CBX_HFT_2023241.Models {
                 if (YearOfBirth == -1) {
                     return "Undefined";
                 }
-                return (DateTime.Now.Year - YearOfBirth).ToString(); } }
+                return (DateTime.Now.Year - YearOfBirth).ToString(); } 
+            set {; }
+        }
 
         [StringLength(240)]
         public string WriterName { get; set; }

@@ -2,7 +2,7 @@
 <html>
 <head>
     <meta charset="utf-8" />
-    <title>Record UI</title>
+    <title>Music UI</title>
     <link rel="stylesheet" href="style.css"/>
 </head>
 <body>
@@ -99,6 +99,9 @@
         <label>Year of release</label>
         <input type="number" id="albumReleaseInput" />
 
+        <label>Written by (ID)</label>
+        <input type="number" id="albumWriterInput"/>
+
         <label>Genre</label>
         <select id="albumGenre" name="albumGenre">
             <option value="0">Classic</option>
@@ -126,6 +129,9 @@
 
         <label>Year of release</label>
         <input type="number" id="albumReleaseUpdate" />
+
+        <label>Written by (ID)</label>
+        <input type="number" id="albumWriterUpdate" />
 
         <label>Genre</label>
         <select id="albumGenreUpdate" name="albumGenreUpdate">
@@ -201,6 +207,31 @@
     <div id="displayTopAlbum">
         <button type="button" onclick="displayTopAlbumCount()">Writers with most albums</button>
         <ul id="writerList"></ul>
+    </div>
+
+    <div id="displayTopRecord">
+        <button type="button" onclick="displayTopRatedRecords()">Top records</button>
+        <ul id="topRecordList"></ul>
+    </div>
+
+    <div>
+        <select id="writerGenre" name="writerGenre">
+            <option value="0">Classic</option>
+            <option value="1">Jazz</option>
+            <option value="2">Country</option>
+            <option value="3">Pop</option>
+            <option value="4">Rock</option>
+            <option value="5">Metal</option>
+            <option value="6">Electro</option>
+            <option value="7">Punk</option>
+            <option value="8">Folk</option>
+            <option value="9">Disco</option>
+            <option value="10">Funk</option>
+            <option value="11">Synth</option>
+            <option value="12">HipHop</option>
+        </select>
+        <button type="button" onclick="displayWritersWithGenre()">Writers with this genre</button>
+        <ul id="writersGenreList"></ul>
     </div>
 
 

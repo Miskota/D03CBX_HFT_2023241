@@ -221,7 +221,7 @@ namespace D03CBX_GUI_2023242.WpfClient
                 () => {
                     return SelectedWriter != null;
                 });
-
+                
                 UpdateWriterCommand = new RelayCommand(() => {
                     Writers.Update(SelectedWriter);
                 });
