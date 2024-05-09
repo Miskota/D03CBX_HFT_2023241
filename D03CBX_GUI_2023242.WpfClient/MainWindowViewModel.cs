@@ -40,6 +40,7 @@ namespace D03CBX_GUI_2023242.WpfClient
         public ICommand Top10RatedCommand { get; set; } // IEnumerable<Record>
         public ICommand Top10PlaysCommand { get; set; } // IEnumerable<Record>
         public ICommand AveragePlaysAlbumCommand { get; set; } // IEnumerable<string>
+        public ICommand WritersWithGenreCommand { get; set; }
 
 
 
@@ -99,6 +100,8 @@ namespace D03CBX_GUI_2023242.WpfClient
             }
         }
 
+        public string SelectedGenre { get; set; }
+
         public static bool IsInDesignMode {
             get {
                 var prop = DesignerProperties.IsInDesignModeProperty;
@@ -120,6 +123,12 @@ namespace D03CBX_GUI_2023242.WpfClient
         public IEnumerable<Record> Top10Rated {
             get { return top10Rated; }
             set { SetProperty(ref top10Rated, value); }
+        }
+
+        private IEnumerable<Writer> writersWithGenre;
+        public IEnumerable<Writer> WritersWithGenre {
+            get { return writersWithGenre; }
+            set { SetProperty(ref writersWithGenre, value); }
         }
 
         public MainWindowViewModel()
@@ -153,10 +162,10 @@ namespace D03CBX_GUI_2023242.WpfClient
                    
                 });
 
-                AveragePlaysAlbumCommand = new RelayCommand(() =>
-                {
-                    
+                WritersWithGenreCommand = new RelayCommand(() => {
+                    WritersWithGenre = nonCrudRestService.Get<Writer>($"NonCrud/WritersWithAlbumsInGenre/{SelectedGenre}");
                 });
+                
 
 
                 CreateRecordCommand = new RelayCommand(() => {

@@ -3,6 +3,7 @@
         xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
         xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:sys="clr-namespace:System;assembly=mscorlib"
         xmlns:local="clr-namespace:D03CBX_GUI_2023242.WpfClient"
         mc:Ignorable="d"
         Title="MainWindow" Height="900" Width="1600">
@@ -38,6 +39,34 @@
                     </ListBox.ItemTemplate>
                 </ListBox>
                 <Button Content="Most rated songs" Command="{Binding Top10RatedCommand}" Padding="2"/>
+
+                <ListBox ItemsSource="{Binding WritersWithGenre}" d:ItemsSource="{d:SampleData ItemCount=5}">
+                    <ListBox.ItemTemplate>
+                        <DataTemplate>
+                            <Label Content="{Binding WriterName}" Padding="5"/>
+                        </DataTemplate>
+                    </ListBox.ItemTemplate>
+                </ListBox>
+                <ComboBox Grid.Column="1" SelectedItem="{Binding SelectedGenre}">
+                    <ComboBox.ItemsSource>
+                        <x:Array Type="{x:Type sys:String}">
+                            <sys:String>Classic</sys:String>
+                            <sys:String>Jazz</sys:String>
+                            <sys:String>Country</sys:String>
+                            <sys:String>Pop</sys:String>
+                            <sys:String>Rock</sys:String>
+                            <sys:String>Metal</sys:String>
+                            <sys:String>Electro</sys:String>
+                            <sys:String>Punk</sys:String>
+                            <sys:String>Folk</sys:String>
+                            <sys:String>Disco</sys:String>
+                            <sys:String>Funk</sys:String>
+                            <sys:String>Synth</sys:String>
+                            <sys:String>HipHop</sys:String>
+                        </x:Array>
+                    </ComboBox.ItemsSource>
+                </ComboBox>
+                <Button Content="Writers with this genre" Command="{Binding WritersWithGenreCommand}" Padding="2"/>
             </StackPanel>
         </Grid>
         
